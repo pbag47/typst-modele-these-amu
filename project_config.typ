@@ -150,14 +150,6 @@
 }
 
 #let appendix(content) = {
-  set heading(numbering: "A.1", supplement: [Annexe])
-  counter(heading).update(0)
+  set heading(numbering: "A.1.", supplement: [Annexe])
   content
-}
-
-#let switch_to_appendix(content) = {
-	set heading(numbering: "A.1")
-	counter(heading).update(0)
-	state("appendix").update(true)
-	content
 }

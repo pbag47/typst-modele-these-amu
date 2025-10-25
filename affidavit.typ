@@ -5,6 +5,7 @@
 #set heading(numbering: none)
 
 = Affidavit
+<Affidavit>
 
 Je soussigné·e, --NOM--,
 déclare par la présente que le travail présenté dans ce manuscrit est mon propre travail, réalisé sous la direction scientifique de --NOM--,

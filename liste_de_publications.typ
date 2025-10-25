@@ -5,6 +5,7 @@
 #set heading(numbering: none)
 
 = Liste de publications et participations aux conférences
+<Publications>
 
 == Liste des publications et/ou brevets #footnote[
   Cette liste comprend les articles publiés, les articles soumis à publication et les articles en préparation ainsi que les livres, chapitres de livre et/ou toutes formes de valorisation des résultats des travaux propres à la discipline du projet de thèse. La référence aux publications doit suivre les règles standards de bibliographie et doit être conforme à la charte des publications d'AMU. 

@@ -46,4 +46,7 @@ outline(target: heading.where(supplement: [Annexe]), title: [Annexe])
 #pagebreak()
 #showendnotes()
 #pagebreak()
+#counter(heading).update(0)
 #include "A1-Intitulé des doctorats.typ"
+#pagebreak()
+#include "A2-Consignes de présentation.typ"

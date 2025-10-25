@@ -4,6 +4,7 @@
 #set heading(numbering: none)
 
 = Résumé et mots clés
+<Résumé>
 
 #lorem(150)
 
