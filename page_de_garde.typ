@@ -2,10 +2,8 @@
 // ctrl + k + c
 // ctrl + k + u
 
-#import "templates.typ": cover_details
-#import "templates.typ": jury_details
-#import "project_config.typ": project_config
-#show: project_config
+#import "project_config.typ": *
+#show: default_amu_template
 
 #set page(
   paper: "a4",
@@ -18,33 +16,15 @@
 // TODO
 // left=3em, right=2em, top=2em, bottom=2em marge pour la reliure en cas d'exemplaire imprimé
 // 
-#set par(justify: false)
+
+#set par(
+  first-line-indent: (amount: 0cm, all: true),
+  justify: false,
+)
 
 #set text(
   font: "Arial",
   size: 12pt
-)
-
-#place(
-  dy: 100% - 5em ,
-  grid(
-    columns:(33%, 33%, 1fr),
-    figure(
-      image("logos/logo_amu.svg", height: 5em),
-      outlined: false,
-      numbering: none,
-    ),
-    figure(
-      image("logos/logo_amu.svg", height: 5em),
-      outlined: false,
-      numbering: none,
-    ),
-    figure(
-      image("logos/logo_amu.svg", height: 5em),
-      outlined: false,
-      numbering: none,
-    ),
-  ),
 )
 
 #grid(
@@ -111,7 +91,27 @@
   ]
 )
 
-#linebreak()
+#v(1fr)
+
+
+#let cover_details(title: "Titre", description: "Description") = {
+  text(weight: "bold",)[#title]
+  linebreak()
+  text[#description]
+}
+
+#let jury_details(name: "Nom", role: "Rôle", description: "Titre et affiliation") = {
+  grid(
+    columns: (50%, 1fr),
+    row-gutter: 0.65em,
+    text[#name],
+    text[#role],
+    grid.cell(
+      colspan: 2,
+      text[#description],
+    )
+  )
+}
 
 #grid(
   columns: (45%, 3%, 1fr),
@@ -181,4 +181,16 @@
     ),
   )
 )
+
+#v(1fr)
+
+#align(center,
+  grid(
+    columns:(33%, 33%, 1fr),
+    image("logos/logo_amu.svg", height: 5em),
+    image("logos/logo_amu.svg", height: 5em),
+    image("logos/logo_amu.svg", height: 5em),
+  )
+)
+
 

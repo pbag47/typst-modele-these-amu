@@ -2,7 +2,7 @@
 // Default configuration used by all .typ files of this project
 // If needed, it can be overridden by local per-file or per-block configurations.
 
-#let project_config(doc) = {
+#let default_amu_template(doc) = {
   set page(
     paper: "a4",
     margin: 2.5cm,

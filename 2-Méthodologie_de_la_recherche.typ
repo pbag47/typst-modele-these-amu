@@ -1,6 +1,6 @@
 
 #import "project_config.typ": *
-#show: project_config
+#show: default_amu_template
 
 = Méthodologie de la recherche
 
