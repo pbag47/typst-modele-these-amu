@@ -2,7 +2,7 @@
 // Default configuration used by all .typ files of this project
 // If needed, it can be overridden by local per-file or per-block configurations.
 
-#let default_amu_template(doc) = {
+#let default_amu_template(content) = {
   set page(
     paper: "a4",
     margin: 2.5cm,
@@ -95,7 +95,7 @@
   // Label to exclude marked headers from the table of contentts
   show <exclude_heading_from_table_of_contents>: set heading(outlined: false)
 
-  doc
+  content
 }
 
 // Endnotes
@@ -149,10 +149,10 @@
   all_endnotes.update(x => ())
 }
 
-#let appendix(body) = {
-  set heading(numbering: "A", supplement: [Annexe])
+#let appendix(content) = {
+  set heading(numbering: "A.1", supplement: [Annexe])
   counter(heading).update(0)
-  body
+  content
 }
 
 #let switch_to_appendix(content) = {

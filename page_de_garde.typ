@@ -139,15 +139,15 @@
     row-gutter: 1.5em,
     detail_entry_template(
       title: [Discipline],
-      description: [Liste des disciplines en annexe A],
+      description: [Liste des disciplines en annexe @Annexe-Intitulé],
     ),
     detail_entry_template(
       title: [Spécialité],
-      description: [Liste des spécialités en annexe A],
+      description: [Liste des spécialités en annexe @Annexe-Intitulé],
     ),
     detail_entry_template(
       title: [Ecole doctorale],
-      description: [Liste des écoles doctorales en annexe A],
+      description: [Liste des écoles doctorales en annexe @Annexe-Intitulé],
     ),
     detail_entry_template(
       title: [Laboratoire/Partenaires de recherche],
