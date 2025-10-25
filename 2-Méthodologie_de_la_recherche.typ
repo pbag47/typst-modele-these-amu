@@ -84,14 +84,14 @@ et passer des arguments aux commandes pour en modifier l'éxécution.
 Voir (Tableaux~@Table-Alpha~et~@Table-Butcher)
 
 #set heading(numbering: none)  // Numérotation des titres désactivée jusqu'à la fin du fichier, si elle n'est pas réactivée manuellement
-==== Ce titre de partie n'est pas numéroté
+==== Ce titre de partie n'est pas numéroté <exclude_heading_from_table_of_contents>
 
 // TODO: Bibtex integration
 Ajout d'une citation entre parenthèses~\parencite{godard_borreliose_2012}. 
 Ajout d'une citation simple de \cite{zohdy_mapping_2012} avec la commande \textit{\textbackslash cite}. 
 Ajout d'une citation avec année et page entre parenthèses de \textcite[9]{godard_borreliose_2012} avec la commande \textit{\textbackslash textcite}. La citation suivante, sur la même page, de \textcite[12]{godard_borreliose_2012} utilise ibidem avec le style de citation \textit{authoryear-ibid} et l'utilisation des options biblatex \textit{pagetracker} et \textit{ibidtracker}.
 
-==== Plusieurs figures côte à côte
+==== Plusieurs figures côte à côte <exclude_heading_from_table_of_contents>
 
 #figure(
   grid(
