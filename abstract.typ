@@ -2,9 +2,7 @@
 #show: default_amu_template
 
 #set heading(numbering: none)
-#set text(
-  lang: "en",
-)
+#set text(lang: "en")
 
 = Abstract and Keywords
 <Abstract>

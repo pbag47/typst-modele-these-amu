@@ -36,4 +36,4 @@
 #counter(heading).update(0)
 #include "A1-Intitulé des doctorats.typ"
 #include "A2-Consignes de présentation.typ"
-// #include "A3-Presentation guidelines.typ"
+#include "A3-Presentation guidelines.typ"

@@ -1,0 +1,58 @@
+
+#import "_config.typ": *
+#show: default_amu_template
+#show: appendix
+
+#show ref: it => {
+  let el = it.element
+  if it.element != none and it.element.func() == heading {
+    link(
+      it.element.location(),
+      [#text(it.element.body)]
+      )
+  } else {
+    it
+  }
+}
+
+#set text(lang: "en")
+
+
+= Presentation guidelines
+
+You have just downloaded the Typst template for AMU doctoral thesis. 
+Some elements must be used:
+
+// TODO:
+// \begin{figure}[h!tbp]
+// 	%\vspace{0.5cm}
+// 	\centering
+// 	\includegraphics[width=0.8\textwidth]{titre.pdf}
+// \end{figure}
+
+
++ The title page of AMU thesis: it is written in French and complies with the AMU graphic charter;
++ In the case of international cotutelle, the logo of the partner institution must appear at the top right of the title page;
++ The composition of the jury, the doctoral school, the discipline and the specialty (if applicable) must be in accordance with the Adum application form for the thesis defense;
++ The national thesis number (NNT) must be displayed on the title page;
++ Where appropriate, logos of partner institutions or research units can be added to the bottom of the title page;
++ The @Affidavit page: according to the language used for writing your thesis, choose the French or English version, then complete, date and sign it;
++ The #lower[@Publications] page made during the course of your thesis project;
++ @Résumé in French and @Abstract in English pages: each summary must not exceed 4,000 characters.
+
+
+Depending on your needs, you can add the following elements: summary and/or table of contents, list of figures, list of tables, list of acronyms, glossary, index, nomenclature...
+For the body of your thesis, if your doctoral school does not give you more specific instructions, you can use the styles established in this template or your own styles following these recommendations:
+- Neutral font: It is recommended to use a standard serif font for text and a standard sans-serif font for titles;
+- Geometry: paper=a4, fontsize=12pt, DIV=12;
+- Single-line spacing;
+- Justified text.
+
+// TODO
+// \begin{figure}[h!tbp]
+// 	%\vspace{0.5cm}
+// 	\centering
+// 	\includegraphics[width=0.3\textwidth]{geometry.pdf}
+// \end{figure}
+
+Your thesis must be submitted online in PDF 1.5 minimum version format on #link("https://www.adum.fr/")[adum.fr].
