@@ -5,7 +5,7 @@
 
 // ---- Imports ---- //
 // Importe tout le contenu du fichier "project_config.typ"
-#import "project_config.typ": *
+#import "_config.typ": *
 
 
 // ---- Définition des templates locaux ---- //

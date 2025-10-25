@@ -1,5 +1,5 @@
 
-#import "project_config.typ": *
+#import "_config.typ": *
 #show: default_amu_template
 
 #set heading(numbering: none)

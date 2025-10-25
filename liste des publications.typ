@@ -1,10 +1,10 @@
 
-#import "project_config.typ": *
+#import "_config.typ": *
 #show: default_amu_template
 
 #set heading(numbering: none)
 
-= Liste de publications et participations aux conférences
+= Liste des publications et participations aux conférences
 <Publications>
 
 == Liste des publications et/ou brevets #footnote[
