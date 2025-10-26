@@ -23,13 +23,10 @@
 You have just downloaded the Typst template for AMU doctoral thesis. 
 Some elements must be used:
 
-// TODO:
-// \begin{figure}[h!tbp]
-// 	%\vspace{0.5cm}
-// 	\centering
-// 	\includegraphics[width=0.8\textwidth]{titre.pdf}
-// \end{figure}
-
+#align(
+  center,
+  image("figures/titre.svg", height: 50%),
+)
 
 + The title page of AMU thesis: it is written in French and complies with the AMU graphic charter;
 + In the case of international cotutelle, the logo of the partner institution must appear at the top right of the title page;
@@ -48,11 +45,9 @@ For the body of your thesis, if your doctoral school does not give you more spec
 - Single-line spacing;
 - Justified text.
 
-// TODO
-// \begin{figure}[h!tbp]
-// 	%\vspace{0.5cm}
-// 	\centering
-// 	\includegraphics[width=0.3\textwidth]{geometry.pdf}
-// \end{figure}
+#align(
+  center,
+  image("figures/geometry.svg"),
+)
 
 Your thesis must be submitted online in PDF 1.5 minimum version format on #link("https://www.adum.fr/")[adum.fr].

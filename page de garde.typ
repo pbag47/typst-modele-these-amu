@@ -123,7 +123,7 @@
 
 #align(center,
   text(
-    [--SOUS-TITRE],
+    [--SOUS-TITRE--],
     size: 22pt,  // 24 sur le modèle Word
   ),
 )

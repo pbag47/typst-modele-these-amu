@@ -22,12 +22,10 @@
 Vous venez de télécharger le modèle Typst pour les thèses de doctorat AMU.
 Certains éléments doivent obligatoirement être utilisés~:
 
-// TODO:
-// \begin{figure}[h!tbp]
-// 	%\vspace{0.5cm}
-// 	\centering
-// 	\includegraphics[width=0.8\textwidth]{titre.pdf}
-// \end{figure}
+#align(
+  center,
+  image("figures/titre.svg", height: 50%),
+)
 
 + La page de titre des thèses AMU~: elle est rédigée en langue française et respecte la charte graphique AMU~;
 + En cas de cotutelle internationale, le logo de l'établissement partenaire doit apparaître en haut à droite de la page de titre~;
@@ -49,11 +47,9 @@ Pour le corps de votre thèse, si votre école doctorale ne vous donne pas de co
 - Interligne simple~;
 - Texte justifié.
 
-// TODO:
-// \begin{figure}[h!tbp]
-// 	%\vspace{0.5cm}
-// 	\centering
-// 	\includegraphics[width=0.3\textwidth]{geometry.pdf}
-// \end{figure}
+#align(
+  center,
+  image("figures/geometry.svg"),
+)
 
 Votre thèse devra être déposée en ligne en format PDF version 1.5 minimum sur #link("https://www.adum.fr/")[adum.fr].
