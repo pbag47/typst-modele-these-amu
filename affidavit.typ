@@ -4,6 +4,7 @@
 
 #set heading(numbering: none)
 #set page(numbering: none)
+// #set page(header: current-chapter-title())
 
 = Affidavit
 <Affidavit>
