@@ -3,6 +3,7 @@
 #show: default_amu_template
 
 #set heading(numbering: none)
+#set page(numbering: none)
 
 = Affidavit
 <Affidavit>
@@ -15,17 +16,10 @@ Ce travail n'a pas été précédemment soumis en France ou à l'étranger dans 
 
 Fait à --LIEU-- le --DATE--
 
-// La signature est centrée à droite, ce qui va à l'encontre du comportement par défaut des figures (centrées).
-// On crée donc un template spécifique pour cette figure, sur lequel toutes les propriétés peuvent être modifiées sans que cela n'impacte le reste du document
-#let signature_figure(signature_image_path) = {
-  show figure: set align(right)
-  figure(
-    image(signature_image_path, height: 5em),
-    outlined: false,
-    numbering: none,
-  )
-}
-#signature_figure("logos/logo_amu.svg")
+#align(
+  right, 
+  image("logos/logo_amu.svg", height: 5em)
+)
 
 #v(1fr)
 
