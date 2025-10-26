@@ -1,5 +1,5 @@
 
-#import "_config.typ": *
+#import "_config.typ": default_amu_template
 #show: default_amu_template
 
 = Résultats

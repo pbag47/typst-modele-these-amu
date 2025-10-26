@@ -1,11 +1,5 @@
 
-// ctrl + k + c
-// ctrl + k + u
-
-
-// ---- Imports ---- //
-// Importe tout le contenu du fichier "project_config.typ"
-#import "_config.typ": *
+#import "_config.typ": default_amu_template
 
 
 // ---- Définition des templates locaux ---- //
