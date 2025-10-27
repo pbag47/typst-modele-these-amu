@@ -26,12 +26,13 @@
   title: [= Liste des tableaux],
   target: figure.where(kind: table),
 )
-
 #include "introduction.typ"
 #include "1-Généralités.typ"
 #include "2-Méthodologie de la recherche.typ"
 #include "3-Résultats.typ"
 #include "conclusion.typ"
+#bibliography("biblio.bib")
+#pagebreak()
 #showendnotes()
 #counter(heading).update(0)
 #include "A1-Intitulé des doctorats.typ"

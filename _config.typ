@@ -148,7 +148,6 @@
   // https://typst.app/docs/reference/model/ref/#customization
   // Adapted to also format chapter parts and figure references the same way.
   show ref: it => {
-    let el = it.element
     if it.element != none and it.element.func() in (
       math.equation,
       heading,

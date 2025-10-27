@@ -1,0 +1,13 @@
+<!-- 
+TODO:
+Custom CSL file for bibiography reference format  
+This file describes a bibiography reference style that includes 
+the pages being cited, e.g.: "GODARD et al. (2012, p. 9)"
+
+Ressources: 
+"http://purl.org/net/xbiblio/csl"
+"https://forum.typst.app/t/how-to-cite-with-a-page-number-in-gb-t-7714-2015-sty"
+
+-->
+
+

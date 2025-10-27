@@ -31,11 +31,9 @@ L'hypergravité consiste à augmenter la force du vecteur gravitaire en lui sur-
 
 Les caractéristiques techniques de la centrifugeuse 
 // TODO: \index{centrifugeuse}
-ont été décrites dans un article de
-// TODO: ~\cite{jamon_ground-based_2008} 
+ont été décrites dans un article de @jamon_ground-based_2008
 et dans la partie @Chap-Methodo_Part-Hypergravité. 
-Brièvement, la centrifugeuse 
-// TODO: (Figure~\ref{photo_centrifugeuse}) 
+Brièvement, la centrifugeuse (Figure @Fig-Centrifugeuse)
 est de grand diamètre (jusqu'à 3.6m en rotation). Pour limiter les vibrations, la centrifugeuse repose sur des dispositifs anti-vibrations. 
 Le bruit produit par la centrifugeuse est faible. 
 A un mètre de distance, le niveau sonore n'est que de 58dB contre 52dB si la centrifugeuse est arrêtée. 
@@ -79,17 +77,29 @@ On peut utiliser les commandes personnelles pour appeler rapidement des formules
 et passer des arguments aux commandes pour en modifier l'éxécution. 
 // TODO: \emiss[\nu]{\Omega}.
 
+
 ==== Ce titre de partie ne s'affiche pas dans la table des matières <exclude_heading_from_table_of_contents>
 
 Voir (Tableaux~@Table-Alpha~et~@Table-Butcher)
 
+
 #set heading(numbering: none)  // Numérotation des titres désactivée jusqu'à la fin du fichier, si elle n'est pas réactivée manuellement
 ==== Ce titre de partie n'est pas numéroté <exclude_heading_from_table_of_contents>
 
-// TODO: Bibtex integration
-Ajout d'une citation entre parenthèses~\parencite{godard_borreliose_2012}. 
-Ajout d'une citation simple de \cite{zohdy_mapping_2012} avec la commande \textit{\textbackslash cite}. 
-Ajout d'une citation avec année et page entre parenthèses de \textcite[9]{godard_borreliose_2012} avec la commande \textit{\textbackslash textcite}. La citation suivante, sur la même page, de \textcite[12]{godard_borreliose_2012} utilise ibidem avec le style de citation \textit{authoryear-ibid} et l'utilisation des options biblatex \textit{pagetracker} et \textit{ibidtracker}.
+Ajout d'une citation entre parenthèses 
+#cite(<godard_borreliose_2012>, style: "chicago-author-date").
+Ajout d'une citation simple de 
+#cite(<zohdy_mapping_2012>, style: "chicago-author-date", form: "prose").
+Ajout d'une citation avec année et page entre parenthèses de \textcite[9]{godard_borreliose_2012} 
+// TODO: 
+// #cite(<godard_borreliose_2012>, style: "cite_with_page_number.csl")
+avec la commande \textit{\textbackslash textcite}. 
+La citation suivante, sur la même page, de \textcite[12]{godard_borreliose_2012} 
+// TODO:
+// #cite(<godard_borreliose_2012>)
+utilise ibidem avec le style de citation 
+\textit{authoryear-ibid} et l'utilisation des options biblatex \textit{pagetracker} et \textit{ibidtracker}.
+
 
 ==== Plusieurs figures côte à côte <exclude_heading_from_table_of_contents>
 
