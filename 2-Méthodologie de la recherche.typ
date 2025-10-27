@@ -10,8 +10,8 @@
 
 #lorem(150)
 
-Une première note de fin de page #_config.endnote[Première note de fin de page.], 
-une deuxième #_config.endnote[Deuxième note de fin de page.] et ...
+Une première note de fin de document #_config.endnote[Première note de fin de document.], 
+une deuxième #_config.endnote[Deuxième note de fin de document.] et ...
 #_config.endnote[... note de fin de document.] 
 #_config.endnote[... note de fin de document.] 
 #_config.endnote[... note de fin de document.] 
@@ -20,6 +20,7 @@ une deuxième #_config.endnote[Deuxième note de fin de page.] et ...
 #_config.endnote[... note de fin de document.] 
 #_config.endnote[... note de fin de document.] 
 #_config.endnote[#lorem(50)].
+
 
 === Traitement expérimental
 
