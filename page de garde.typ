@@ -1,4 +1,7 @@
 
+#import "_config.typ"
+#show: _config.default_amu_template
+
 
 // ---- Définition des templates locaux ---- //
 // Définit les règles locales qui s'ajoutent aux règles globales de "project_config.typ", ou qui les remplacent.
@@ -55,23 +58,15 @@
   )
 }
 
-
-// ---- Application des templates ---- //
-// On applique d'abord les règles globales : default_amu_template. Puis on applique les règles locales de local_template sur toute la suite du document
-#import "_config.typ"
-#show: _config.default_amu_template
 #show: local_template
 
 
-// ---- Contenu ---- // 
-// Logos en haut de la page
 #grid(
   columns: (50%, 50%),
   image("logos/logo_amu.svg", height: 7em),
   //  image("logos/logo_amu.svg", height: 7em),
 )
 
-// Trait jaune et numéro national de thèse
 #grid(
   columns: (75%, 1fr),
   align: center + horizon,

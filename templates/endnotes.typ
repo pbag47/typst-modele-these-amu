@@ -4,7 +4,7 @@
 // This script implements the endnotes logic from scratch.
 // Inspired by: public Typst user project
 // https://typst.app/project/rnU99-7IT8dbMjGTVceOqs
-// 
+
 // TODO: Implement return link from showendnotes to respective note locations in text.
 
 #let all_endnotes = state("endnotes", (:))
