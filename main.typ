@@ -32,8 +32,9 @@
 #include "3-Résultats.typ"
 #include "conclusion.typ"
 #bibliography("biblio.bib")
-#pagebreak()
-#context _config.showindex()
+// TODO:
+// #pagebreak()
+// #context _config.showindex()
 #pagebreak()
 #_config.showendnotes()
 #counter(heading).update(0)
