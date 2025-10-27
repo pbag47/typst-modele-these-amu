@@ -1,8 +1,10 @@
 
-#import "_config.typ": default_amu_template
-#show: default_amu_template
+#import "_config.typ"
+#show: _config.default_amu_template
+
 
 = Résultats
+
 
 == Modèles
 
@@ -47,6 +49,7 @@
     mesurés pour les chocs plasma de la deuxième série.
   ]
 ) <Table-Alpha>
+
 
 == Articles
 

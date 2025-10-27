@@ -1,6 +1,6 @@
 
-#import "_config.typ": default_amu_template, showendnotes
-#show: default_amu_template
+#import "_config.typ"
+#show: _config.default_amu_template
 
 #include "page de garde.typ"
 #include "affidavit.typ"
@@ -33,7 +33,7 @@
 #include "conclusion.typ"
 #bibliography("biblio.bib")
 #pagebreak()
-#showendnotes()
+#_config.showendnotes()
 #counter(heading).update(0)
 #include "A1-Intitulé des doctorats.typ"
 #include "A2-Consignes de présentation.typ"

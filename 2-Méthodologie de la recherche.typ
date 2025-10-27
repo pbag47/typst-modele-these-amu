@@ -1,6 +1,6 @@
 
-#import "_config.typ": default_amu_template, endnote
-#show: default_amu_template
+#import "_config.typ"
+#show: _config.default_amu_template
 
 = Méthodologie de la recherche
 
@@ -10,16 +10,16 @@
 
 #lorem(150)
 
-Une première note de fin de page#endnote[Première note de fin de page.], 
-une deuxième #endnote[Deuxième note de fin de page.] et ...
-#endnote[... note de fin de document.] 
-#endnote[... note de fin de document.] 
-#endnote[... note de fin de document.] 
-#endnote[... note de fin de document.] 
-#endnote[... note de fin de document.] 
-#endnote[... note de fin de document.] 
-#endnote[... note de fin de document.] 
-#endnote[#lorem(50)].
+Une première note de fin de page#_config.endnote[Première note de fin de page.], 
+une deuxième #_config.endnote[Deuxième note de fin de page.] et ...
+#_config.endnote[... note de fin de document.] 
+#_config.endnote[... note de fin de document.] 
+#_config.endnote[... note de fin de document.] 
+#_config.endnote[... note de fin de document.] 
+#_config.endnote[... note de fin de document.] 
+#_config.endnote[... note de fin de document.] 
+#_config.endnote[... note de fin de document.] 
+#_config.endnote[#lorem(50)].
 
 === Traitement expérimental
 
@@ -92,7 +92,7 @@ Ajout d'une citation simple de
 #cite(<zohdy_mapping_2012>, style: "chicago-author-date", form: "prose").
 Ajout d'une citation avec année et page entre parenthèses de \textcite[9]{godard_borreliose_2012} 
 // TODO: 
-// #cite(<godard_borreliose_2012>, style: "cite_with_page_number.csl")
+// #cite(<godard_borreliose_2012>, style: "templates/cite_with_page_number.csl")
 avec la commande \textit{\textbackslash textcite}. 
 La citation suivante, sur la même page, de \textcite[12]{godard_borreliose_2012} 
 // TODO:

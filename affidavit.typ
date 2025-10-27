@@ -1,10 +1,10 @@
 
-#import "_config.typ": default_amu_template
-#show: default_amu_template
+#import "_config.typ"
+#show: _config.default_amu_template
 
 #set heading(numbering: none)
 #set page(numbering: none)
-// #set page(header: current-chapter-title())
+
 
 = Affidavit
 <Affidavit>

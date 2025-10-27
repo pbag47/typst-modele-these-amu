@@ -1,7 +1,7 @@
 
-#import "_config.typ": default_amu_template, appendix
-#show: default_amu_template
-#show: appendix
+#import "_config.typ"
+#show: _config.default_amu_template
+#show: _config.appendix
 
 #show heading.where(level: 2): set heading(
   numbering: none,

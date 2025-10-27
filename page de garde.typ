@@ -1,6 +1,4 @@
 
-#import "_config.typ": default_amu_template
-
 
 // ---- Définition des templates locaux ---- //
 // Définit les règles locales qui s'ajoutent aux règles globales de "project_config.typ", ou qui les remplacent.
@@ -60,7 +58,8 @@
 
 // ---- Application des templates ---- //
 // On applique d'abord les règles globales : default_amu_template. Puis on applique les règles locales de local_template sur toute la suite du document
-#show: default_amu_template
+#import "_config.typ"
+#show: _config.default_amu_template
 #show: local_template
 
 
