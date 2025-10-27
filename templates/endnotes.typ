@@ -1,37 +1,35 @@
 
 // Endnotes
 // At the time this script is written, endnotes are not in the list of default features in Typst.
-// The following lines implement the endnotes logic from scratch.
-// Source: public Typst user project
+// This script implements the endnotes logic from scratch.
+// Inspired by: public Typst user project
 // https://typst.app/project/rnU99-7IT8dbMjGTVceOqs
-// (Adapted to match AMU template)
+// 
+// TODO: Implement return link from showendnotes to respective note locations in text.
+
 #let all_endnotes = state("endnotes", ())
-#let amount_of_endnotes = counter("amount-of-endnotes")
+#let amount_of_endnotes = counter("amount_of_endnotes")
+#let endnote_label_prefix = "endnote:"
+
 
 #let endnote(content) = {
   amount_of_endnotes.step(level: 2)
   context {
-    // TODO: Implement return link from showendnotes note numbers to respective note locations in text.
-
-    all_endnotes.update(x => x + (content + parbreak(),))
-  
-    let idx = amount_of_endnotes.get().last()
-    let num = amount_of_endnotes.get().map(str).join(".")  // pseudo-uuid
-
-    let is_in_document = query(selector(label(num))).len() >= 1
-
-    if not is_in_document {
-      return // showendnotes() was called before last endnotes
-    }
-  
-    link(
-      label(num),
-      super[#idx]
+    all_endnotes.update(
+      x => {
+        x.push(content + parbreak())
+        return x
+      }
     )
+    let idx = amount_of_endnotes.get().last()
+    let label_str = endnote_label_prefix + amount_of_endnotes.get().map(str).join(".")
+
+    [#link(label(label_str), super[#idx])]
   }
 }
 
-#let showendnotes(name: "Notes") = context {
+
+#let showendnotes(name: "Notes") = context{
   if amount_of_endnotes.get().len() == 1 {
     return
   }
@@ -40,10 +38,17 @@
 
   let (level, amt) = amount_of_endnotes.get()
   for idx in range(amt) {
-    let num = str(level) + "." + str(idx + 1)
-    [#link("")[#(idx + 1). ]] + [#all_endnotes.get().at(idx) #label(num)]
+    let label_str = endnote_label_prefix + str(level) + "." + str(idx + 1)
+    let endnote_content = all_endnotes.get().at(idx)
+    let endnote_number_str = [#(idx + 1).]
+    let tab = "test \t "
+    [
+      #box(width: 1cm)[#align(right, endnote_number_str)]
+      #h(1em)
+      #all_endnotes.get().at(idx) 
+      #label(label_str)
+    ]
   }
-
   amount_of_endnotes.step()
   all_endnotes.update(x => ())
 }

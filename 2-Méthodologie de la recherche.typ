@@ -10,7 +10,7 @@
 
 #lorem(150)
 
-Une première note de fin de page#_config.endnote[Première note de fin de page.], 
+Une première note de fin de page #_config.endnote[Première note de fin de page.], 
 une deuxième #_config.endnote[Deuxième note de fin de page.] et ...
 #_config.endnote[... note de fin de document.] 
 #_config.endnote[... note de fin de document.] 
@@ -30,7 +30,7 @@ L'hypergravité consiste à augmenter la force du vecteur gravitaire en lui sur-
 ==== La centrifugeuse
 
 Les caractéristiques techniques de la centrifugeuse 
-// TODO: \index{centrifugeuse}
+// TODO: #_config.index[centrifugeuse] 
 ont été décrites dans un article de @jamon_ground-based_2008
 et dans la partie @Chap-Methodo_Part-Hypergravité. 
 Brièvement, la centrifugeuse (Figure @Fig-Centrifugeuse)
