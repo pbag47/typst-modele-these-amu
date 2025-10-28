@@ -24,14 +24,7 @@
   )
 
   // Format of headers
-  set heading(
-    numbering: "1.1.1.1", 
-    supplement: [Default heading],
-  )
-  // Heading supplement is a hacky workaround to separate default headers and appendix headers, so they appear in dedicated outlines.
-  // At the time this script is written, this feature is not implemented in Typst.
-  // This method is not optimal as it is hard to debug and not very fast.
-  // TODO: Watch for future updates of Typst if a clean implementation is made possible.
+  set heading(numbering: "1.1.1.1")
   show heading.where(level: 1): set text(weight: "bold", size: 24pt) 
   show heading.where(level: 2): set text(weight: "bold", size: 20pt)
   show heading.where(level: 3): set text(weight: "bold", size: 18pt)
@@ -43,7 +36,6 @@
     // counter(math.equation).update(0)
     counter(figure.where(kind: image)).update(0)
     counter(figure.where(kind: table)).update(0)
-    // counter(figure.where(kind: raw)).update(0)
     it
   }
 

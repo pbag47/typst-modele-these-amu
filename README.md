@@ -20,10 +20,9 @@ Ainsi, malgré mes efforts pour reproduire au mieux le modèle de thèse LaTeX, 
     - Index
     - Glossaire
     - Table des matières locale pour chaque chapitre
-    > [!NOTE]
-    > Ces fonctionnalités peuvent être ajoutées par des packages externes (voir [Glossarium](https://typst.app/universe/package/glossarium/) par exemple). C'est à chaque utilisateur de rechercher les packages externes dont il a besoin.
+> [!NOTE]
+> Ces fonctionnalités peuvent être ajoutées par des packages externes (voir [Glossarium](https://typst.app/universe/package/glossarium/) par exemple). C'est à chaque utilisateur de rechercher les packages externes dont il a besoin.
 - Certaines parties ne sont pas tout-à-fait reproduites à l'identique
-    - Table des annexes séparée de la table des matières principale
     - Liens manquants sur les notes de fin de document pour retourner au texte d'origine
     - Les styles de bibliographie disponibles sur Typst sont moins nombreux que sur LaTeX, et le format des citations est moins flexible
 - Parfois, Typst impose certaines contraintes
