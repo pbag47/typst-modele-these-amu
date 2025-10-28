@@ -10,7 +10,6 @@
 #include "remerciements.typ"
 #outline(
   title: [= Table des matières],
-  target: heading.where(supplement: [Default heading])
 )
 #pagebreak()
 #outline(
