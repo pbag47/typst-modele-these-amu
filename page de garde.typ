@@ -162,7 +162,7 @@
       ],
     ),
     linebreak(),
-    [Consignes de présentation détaillées des pages liminaires en annexe B],
+    [Consignes de présentation détaillées des pages liminaires en  annexe @Annexe-Consignes],
   ),
 
   line(
