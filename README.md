@@ -18,12 +18,12 @@ limitations under the License.
 
 # Modèle de thèse Typst pour Aix-Marseille Université
 
-
 Ce projet est une conversion vers Typst du [modèle LaTeX officiel d'Aix-Marseille Université](https://github.com/SCD-Aix-Marseille-Universite/latexamu/tree/master).
 Il contient des templates qui permettent d'imiter la mise en page, le style et le format du modèle de thèse LaTeX.
 
 > [!IMPORTANT]
-> Ce projet est issu d'une initiative personnelle. Aix-Marseille Université (AMU) n'est aucunement affiliée à ce répertoire -> il ne s'agit pas d'un répertoire officiel validé par AMU. L'école doctorale reste donc décisionnaire, au cas par cas, quant à la validité de ce modèle et de son utilisation pour le manuscrit de thèse.
+> Ce projet est issu d'une initiative personnelle. Aix-Marseille Université (AMU) n'est aucunement affiliée à ce répertoire -> il ne s'agit pas d'un répertoire officiel validé par AMU. Les écoles doctorales restent donc décisionnaires, au cas par cas, quant à la validité de ce modèle et de son utilisation pour rédiger le manuscrit de thèse.
+
 
 ## Ligne de conduite
 
