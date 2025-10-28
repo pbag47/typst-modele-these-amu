@@ -43,31 +43,26 @@
   let headings = query(selector)
   
   // Pas d'en-tête sur les pages où une annexe commence
-  if query(heading.where(level: 1)).any(it => it.location().page() == here().page()) {
+  if query(heading.where(level: 2)).any(it => it.location().page() == here().page()) {
     return
   }
 
-  let headings_shown = (1)
-  let heading_max_level = 1
+  let level_2_headings = headings.filter(h => h.level == 2)
 
-  let level_1_headings = headings.filter(h => h.level == 1)
-
-  if level_1_headings.len() == 0 {
+  if level_2_headings.len() == 0 {
     return none 
   }
 
   align(
     right,
     [
-      #numbering(
-        heading.numbering, 
+      #numbering("A.",
         (
-          counter(heading).at(level_1_headings.last().location()).last()
+          counter(heading).at(level_2_headings.last().location()).last()
         )
       )
-      .
       #h(1em)
-      #level_1_headings.last().body
+      #level_2_headings.last().body
     ]
   )
 }

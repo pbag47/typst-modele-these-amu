@@ -12,10 +12,6 @@
   title: [= Table des matières],
   target: heading.where(supplement: [Default heading])
 )
-#outline(
-  title: [= Annexes],
-  target: heading.where(supplement: [Annexe])
-)
 #pagebreak()
 #outline(
   title: [= Table des figures],
@@ -37,7 +33,5 @@
 // #context _config.showindex()
 #pagebreak()
 #_config.showendnotes()
-#counter(heading).update(0)
-#include "Annexes/A1-Intitulé des doctorats.typ"
-#include "Annexes/A2-Consignes de présentation.typ"
-#include "Annexes/A3-Presentation guidelines.typ"
+#include "annexes.typ"
+

@@ -3,18 +3,18 @@
 #show: _config.default_amu_template
 #show: _config.appendix
 
-#show heading.where(level: 2): set heading(
+#show heading.where(level: 3): set heading(
   numbering: none,
   outlined: false,
 )
 
-= Intitulé des doctorats <Annexe-Intitulé>
+== Intitulé des doctorats <Annexe-Intitulé>
 
 - Discipline
   - Spécialité
 
 
-== #upper[ED 62 Sciences de la vie et de la santé] (avant~2025)
+=== #upper[ED 62 Sciences de la vie et de la santé] (avant~2025)
 
 - Biologie santé
   - Biochimie structurale
@@ -33,7 +33,7 @@
   - Biotechnologie
 
 
-== #upper[ED 67 Sciences juridiques et politiques]
+=== #upper[ED 67 Sciences juridiques et politiques]
 
 - Droit
   - Droit privé
@@ -42,19 +42,19 @@
 - Science politique
 
 
-== #upper[ED 184 Mathématiques et informatique]
+=== #upper[ED 184 Mathématiques et informatique]
 
 - Mathématiques
 - Informatique
 - Automatique
 
 
-== #upper[ED 250 Sciences chimiques de Marseille]
+=== #upper[ED 250 Sciences chimiques de Marseille]
 
 - Sciences chimiques
 
 
-== #upper[ED 251 Sciences de l'environnement]
+=== #upper[ED 251 Sciences de l'environnement]
 
 - Sciences de l'environnement
   - Anthropologie biologique
@@ -66,7 +66,7 @@
   - Environnement et santé 
 
 
-== #upper[ED 352 Physique et sciences de la matière]
+=== #upper[ED 352 Physique et sciences de la matière]
 
 - Physique et Sciences de la matière 
   - Astrophysique et Cosmologie
@@ -79,7 +79,7 @@
   - Matière condensée et Nanosciences 
 
 
-== #upper[ED 353 Sciences pour l'ingénieur : mécanique, physique, micro et nanoélectronique]
+=== #upper[ED 353 Sciences pour l'ingénieur : mécanique, physique, micro et nanoélectronique]
 
 - Sciences pour l'ingénieur
   - Energétique
@@ -92,7 +92,7 @@
   - Fusion magnétique
 
 
-== #upper[ED 354 Langues, lettres et arts]
+=== #upper[ED 354 Langues, lettres et arts]
 
 - Etudes anglophones
 - Etudes germaniques
@@ -117,7 +117,7 @@
   - Etudes roumaines
 
 
-== #upper[ED 355 Espaces, cultures, sociétés]
+=== #upper[ED 355 Espaces, cultures, sociétés]
 
 - Géographie
 - Démographie
@@ -135,7 +135,7 @@
 - Cultures et sociétés d'Asie
 
 
-== #upper[ED 356 Cognition, langage, éducation]
+=== #upper[ED 356 Cognition, langage, éducation]
 
 - Philosophie
 - Psychologie
@@ -145,18 +145,18 @@
 - Sciences cognitives
 
 
-== #upper[ED 372 Sciences économiques et de gestion]
+=== #upper[ED 372 Sciences économiques et de gestion]
 
 - Sciences de gestion
 - Sciences économiques
 
 
-== #upper[ED 463 Sciences du mouvement humain]
+=== #upper[ED 463 Sciences du mouvement humain]
 
 - Sciences du mouvement humain
 
 
-== #upper[ED 658 Sciences du vivant] (depuis 2025)
+=== #upper[ED 658 Sciences du vivant] (depuis 2025)
 
 - Sciences du vivant
   - Bio-informatique et Génomique
@@ -171,7 +171,7 @@
   - Neurosciences
 
 
-== #upper[ED 659 Recherches biomédicales] (depuis 2025)
+=== #upper[ED 659 Recherches biomédicales] (depuis 2025)
 
 - Recherches biomédicales
   - Ethique, Sciences humaines et santé

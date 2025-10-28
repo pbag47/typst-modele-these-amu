@@ -18,7 +18,7 @@
 #set text(lang: "en")
 
 
-= Presentation guidelines
+== Presentation guidelines
 
 You have just downloaded the Typst template for AMU doctoral thesis. 
 Some elements must be used:

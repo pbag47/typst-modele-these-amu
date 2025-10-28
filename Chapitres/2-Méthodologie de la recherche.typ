@@ -70,7 +70,7 @@ Ajout d'une nouvelle entrée d'index pour la centrifugeuse
 // TODO: \index{centrifugeuse} 
 et pour le mot éléphant
 // TODO: \index{elephant@éléphant} 
-dont la première lettre est accentué. Les entrées 
+dont la première lettre est accentuée. Les entrées 
 // TODO: \gls{+a} \gls{2a} \gls{ca} \gls{Aa} \gls{aa} \gls{alpha} {\NoAutoSpaceBeforeFDP}
 sont dans la nomenclature. 
 On peut utiliser les commandes personnelles pour appeler rapidement des formules lors de la rédaction 

@@ -16,7 +16,8 @@ attach(H e, bl: 2, tl: 4)^(2+) med (3,5 "MeV") + n med (14,1 "MeV") $ <Eq:Fusion
 
 // TODO: Glossaire
 
-Un acronyme utilisé une première fois \gls{asb} puis une seconde fois \gls{asb}. Une définition du glossaire \gls{rutile} et une entrée de la nomenclature \gls{+a}.
+Un acronyme utilisé une première fois \gls{asb} puis une seconde fois \gls{asb}.
+Une définition du glossaire \gls{rutile} et une entrée de la nomenclature \gls{+a}.
 
 == Deuxième partie du premier chapitre
 

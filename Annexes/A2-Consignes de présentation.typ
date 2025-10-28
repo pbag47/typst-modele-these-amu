@@ -17,7 +17,7 @@
 }
 
 
-= Consignes de présentation
+== Consignes de présentation
 
 Vous venez de télécharger le modèle Typst pour les thèses de doctorat AMU.
 Certains éléments doivent obligatoirement être utilisés~:

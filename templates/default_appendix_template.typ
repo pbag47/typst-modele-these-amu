@@ -3,7 +3,8 @@
 
 
 #let appendix(content) = {
-  set heading(numbering: "A.1.", supplement: [Annexe])
+  show heading.where(level: 1): set heading(numbering: none)
+  set heading(numbering: (first, ..nums) => numbering("A.1", ..nums))
   set page(header: context appendix_page_header())
   content
 }

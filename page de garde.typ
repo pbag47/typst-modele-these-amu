@@ -12,12 +12,10 @@
       top: 2em,
       bottom: 2em,
       x: 2em,
+      // left=3em, right=2em, top=2em, bottom=2em marge pour la reliure en cas d'exemplaire imprimé
     ),
     numbering: none,
   )
-  // TODO:
-  // left=3em, right=2em, top=2em, bottom=2em marge pour la reliure en cas d'exemplaire imprimé
-  // 
 
   set par(
     first-line-indent: (amount: 0cm, all: true),
