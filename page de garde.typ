@@ -62,7 +62,10 @@
 #grid(
   columns: (50%, 50%),
   image("logos/logo_amu.svg", height: 7em),
-  //  image("logos/logo_amu.svg", height: 7em),
+  // align(
+  //   right,
+  //   image("figures/example-image-a.png", height: 7em),
+  // )
 )
 
 #grid(
@@ -198,8 +201,8 @@
 #align(center,
   grid(
     columns:(33%, 33%, 1fr),
-    image("logos/logo_amu.svg", height: 5em),
-    image("logos/logo_amu.svg", height: 5em),
-    image("logos/logo_amu.svg", height: 5em),
+    image("figures/example-image-a.png", height: 5em),
+    image("figures/example-image-b.png", height: 5em),
+    image("figures/example-image-c.png", height: 5em),
   )
 )

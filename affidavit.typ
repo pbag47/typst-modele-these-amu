@@ -19,15 +19,14 @@ Fait à --LIEU-- le --DATE--
 
 #align(
   right, 
-  image("logos/logo_amu.svg", height: 5em)
+  image("figures/example-image-a.png", height: 5em)
 )
 
 #v(1fr)
 
-#figure(
+#align(
+  center,
   image("logos/by-nc-nd-eu.svg"),
-  outlined: false,
-  numbering: none,
 )
 
 #align(
