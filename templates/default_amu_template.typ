@@ -45,13 +45,10 @@
       numbering("1.1", counter(heading).get().first(), n)
     },
   )
-  show figure.where(kind: image): set figure(
-    supplement: smallcaps[Figure],
-  )
-  show figure.where(kind: table): set figure(
-    supplement: smallcaps[Tableau],
-  )
-
+  show figure: set block(spacing: 2em) //(top: 0.5em, bottom: 1em))
+  show figure.where(kind: image): set figure(supplement: smallcaps[Figure])
+  show figure.where(kind: table): set figure(supplement: smallcaps[Tableau])
+  
   // Format of links
   show link: set text(fill: blue)
 

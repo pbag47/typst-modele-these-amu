@@ -111,8 +111,8 @@ utilise ibidem avec le style de citation
     column-gutter: 1em,
     image("../figures/example-image-a.png", width: 50%),
     image("../figures/example-image-b.png", width: 50%),
-    "a)",
-    "b)",
+    "(a) Figure A",
+    "(b) Figure B",
   ),
   caption: [Deux figures]
 )
