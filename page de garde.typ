@@ -4,7 +4,7 @@
 
 
 // ---- Définition des templates locaux ---- //
-// Définit les règles locales qui s'ajoutent aux règles globales de "project_config.typ", ou qui les remplacent.
+// Définit les règles locales qui s'ajoutent aux règles globales de "default_amu_template", ou qui les remplacent.
 #let local_template(doc) = {
   set page(
     paper: "a4",
@@ -107,14 +107,14 @@
       Titre de la thèse : 
       --TITRE--
     ],
-    size: 28pt,  // 24 sur le modèle Word
+    size: 28pt,  // 24 sur le modèle Word, ?? sur le modèle LaTeX
   ),
 )
 
 #align(center,
   text(
     [--SOUS-TITRE--],
-    size: 22pt,  // 24 sur le modèle Word
+    size: 22pt,  // 24 sur le modèle Word, ?? sur le modèle LaTeX
   ),
 )
 

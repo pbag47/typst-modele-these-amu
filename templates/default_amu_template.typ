@@ -13,7 +13,7 @@
   set par(
     leading: 0.55em, 
     spacing: 0.55em, 
-    first-line-indent: (amount: 0.5cm, all: true), // 1.8em
+    first-line-indent: (amount: 0.5cm, all: true),
     justify: true,
   )
 
@@ -23,15 +23,19 @@
     lang: "fr",
   )
 
-  // Format of headers
+  // Format des titres
   set heading(numbering: "1.1.1.1")
   show heading.where(level: 1): set text(weight: "bold", size: 24pt) 
   show heading.where(level: 2): set text(weight: "bold", size: 20pt)
   show heading.where(level: 3): set text(weight: "bold", size: 18pt)
   show heading.where(level: 4): set text(weight: "bold", size: 16pt)
+  // Espacement autour des titres
   show heading.where(level: 1): set block(above: 1.4em, below: 1.5em)
+  show heading.where(level: 2): set block(above: 1.4em, below: 1.4em)
+  show heading.where(level: 3): set block(above: 1.4em, below: 1.2em)
+  show heading.where(level: 4): set block(above: 1.4em, below: 1em)
 
-  // Resets figure and table counters when entering a new chapter
+  // Remise à zéro de la numérotation des figures lorqu'on entre dans un nouveau chapitre
   show heading.where(level: 1): it => {
     // counter(math.equation).update(0)
     counter(figure.where(kind: image)).update(0)
@@ -39,30 +43,31 @@
     it
   }
 
-  // Format of figure numbers
+  // Format des numéros de figure
   set figure(
     numbering: (n, ..) => {
       numbering("1.1", counter(heading).get().first(), n)
     },
   )
-  show figure: set block(spacing: 2em) //(top: 0.5em, bottom: 1em))
   show figure.where(kind: image): set figure(supplement: smallcaps[Figure])
   show figure.where(kind: table): set figure(supplement: smallcaps[Tableau])
+  // Espacement autour des figures
+  show figure: set block(spacing: 2em)
   
-  // Format of links
+  // Format des liens
   show link: set text(fill: blue)
 
-  // Format of quotes
+  // Format des blocs de citation
   set quote(block: true)
   show quote: set pad(x: 3em)
 
-  // Format of equation numbers
+  // Format des numéros d'équation
   set math.equation(numbering: "(1)", supplement: none)
 
-  // Format of references when cited in text
-  // Source: Typst documentation
+  // Format des références dans le texte
+  // Source: documentation Typst
   // https://typst.app/docs/reference/model/ref/#customization
-  // Adapted to also format chapter parts and figure references the same way.
+  // Réadapté pour le format des références aux chapitres et aux figures.
   show ref: it => {
     if it.element != none and it.element.func() in (
       math.equation,
@@ -77,12 +82,11 @@
         )
       )
     } else {
-      // Other references as default
       it
     }
   }
 
-  // Label to exclude marked headers from the table of contentts
+  // Label servant à exclure le précédent titre de la table des matières
   show <exclude_heading_from_table_of_contents>: set heading(outlined: false)
 
   content

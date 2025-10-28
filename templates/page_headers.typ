@@ -9,9 +9,9 @@
     return
   }
 
+  // On sélectionne uniquement les titres de niveaux 1 et 2 pour les afficher dans l'en-tête
   let headings_shown = (1, 2)
   let heading_max_level = calc.max(..headings_shown)
-
   let heading_text = headings_shown.map(
     (i) => {
       let headings_at_this_level = headings
@@ -23,9 +23,7 @@
 
       numbering(
         heading.numbering, 
-        (
-          counter(heading).at(headings_at_this_level.last().location()).last()
-        )
+        counter(heading).at(headings_at_this_level.last().location()).last()
       )
       [.]
       h(1em)
@@ -47,8 +45,10 @@
     return
   }
 
+  // On ne sélectione que les titres de niveau 2 pour les afficher dans l'en-tête :
+  // Le titre de niveau 1 est "ANNEXES"
+  // Les titres de niveau 2 sont les titres de chaque annexe (A, B, C, etc...)
   let level_2_headings = headings.filter(h => h.level == 2)
-
   if level_2_headings.len() == 0 {
     return none 
   }
@@ -56,10 +56,9 @@
   align(
     right,
     [
-      #numbering("A.",
-        (
-          counter(heading).at(level_2_headings.last().location()).last()
-        )
+      #numbering(
+        "A.",
+        counter(heading).at(level_2_headings.last().location()).last()
       )
       #h(1em)
       #level_2_headings.last().body

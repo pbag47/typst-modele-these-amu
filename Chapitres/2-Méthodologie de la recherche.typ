@@ -45,9 +45,7 @@ La quantité d'eau et de nourriture disponible par cage permet de faire fonction
 Les animaux ont à disposition 400g de nourriture et 500mL d'eau, mais la consommation de nourriture sur cette période est en moyenne de (209~#sym.plus.minus~14)g, et la consommation d'eau de (258~#sym.plus.minus~21)mL pour une cage de 4 souris.
 
 #figure(
-  image(
-    "../figures/photo_centrifugeuse.png", width: 70%, 
-  ),
+  image("../figures/photo_centrifugeuse.png", width: 70%, ),
   caption: [Photographie de la centrifugeuse utilisée],
 ) <Fig-Centrifugeuse>
 
@@ -84,7 +82,10 @@ et passer des arguments aux commandes pour en modifier l'éxécution.
 Voir (Tableaux~@Table-Alpha~et~@Table-Butcher)
 
 
-#set heading(numbering: none)  // Numérotation des titres désactivée jusqu'à la fin du fichier, si elle n'est pas réactivée manuellement
+#set heading(numbering: none)  
+// La numérotation des titres désactivée jusqu'à la fin du fichier, si elle n'est pas réactivée manuellement
+
+
 ==== Ce titre de partie n'est pas numéroté <exclude_heading_from_table_of_contents>
 
 Ajout d'une citation entre parenthèses 

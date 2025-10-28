@@ -54,7 +54,7 @@
 == Articles
 
 // TODO: 
-// citation with the "alphabetic" style, which is not supported by default on Typst
+// Citation avec le style "alphabetic", qui n'est pas supporté par défaut sur Typst
 #cite(<mohamed_clinical_2014>, form: "full")
 #pagebreak()
 #image("../articles/BMC-1471-2334-14-S2-O1.svg", width: 100%, height: 100%)

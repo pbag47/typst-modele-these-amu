@@ -1,11 +1,14 @@
 
-// Endnotes
-// At the time this script is written, endnotes are not in the list of default features in Typst.
-// This script implements the endnotes logic from scratch.
-// Inspired by: public Typst user project
+// Notes de fin de document
+// Lors de l'écriture de ce script, les notes de fin de document ne sont pas dans la liste des fonctionnalités par défaut de Typst.
+// Ce script implémente une version "artisanale" des notes de fin de document
+// 
+// Inspiré par un projet Typst public :
 // https://typst.app/project/rnU99-7IT8dbMjGTVceOqs
 
-// TODO: Implement return link from showendnotes to respective note locations in text.
+
+// TODO: Lien de retour depuis la note de fin de document vers le texte d'origine.
+
 
 #let all_endnotes = state("endnotes", (:))
 #let amount_of_endnotes = counter("amount_of_endnotes")
