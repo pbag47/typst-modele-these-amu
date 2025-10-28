@@ -27,9 +27,9 @@
   target: figure.where(kind: table),
 )
 #include "introduction.typ"
-#include "1-Généralités.typ"
-#include "2-Méthodologie de la recherche.typ"
-#include "3-Résultats.typ"
+#include "Chapitres/1-Généralités.typ"
+#include "Chapitres/2-Méthodologie de la recherche.typ"
+#include "Chapitres/3-Résultats.typ"
 #include "conclusion.typ"
 #bibliography("biblio.bib")
 // TODO:
@@ -38,6 +38,6 @@
 #pagebreak()
 #_config.showendnotes()
 #counter(heading).update(0)
-#include "A1-Intitulé des doctorats.typ"
-#include "A2-Consignes de présentation.typ"
-#include "A3-Presentation guidelines.typ"
+#include "Annexes/A1-Intitulé des doctorats.typ"
+#include "Annexes/A2-Consignes de présentation.typ"
+#include "Annexes/A3-Presentation guidelines.typ"

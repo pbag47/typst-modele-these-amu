@@ -1,5 +1,5 @@
 
-#import "_config.typ"
+#import "../_config.typ"
 #show: _config.default_amu_template
 #show: _config.appendix
 
@@ -24,7 +24,7 @@ Certains éléments doivent obligatoirement être utilisés~:
 
 #align(
   center,
-  image("figures/titre.svg", height: 50%),
+  image("../figures/titre.svg", height: 50%),
 )
 
 + La page de titre des thèses AMU~: elle est rédigée en langue française et respecte la charte graphique AMU~;
@@ -49,7 +49,7 @@ Pour le corps de votre thèse, si votre école doctorale ne vous donne pas de co
 
 #align(
   center,
-  image("figures/geometry.svg"),
+  image("../figures/geometry.svg"),
 )
 
 Votre thèse devra être déposée en ligne en format PDF version 1.5 minimum sur #link("https://www.adum.fr/")[adum.fr].

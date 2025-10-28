@@ -1,5 +1,5 @@
 
-#import "_config.typ"
+#import "../_config.typ"
 #show: _config.default_amu_template
 
 = Méthodologie de la recherche
@@ -46,7 +46,7 @@ Les animaux ont à disposition 400g de nourriture et 500mL d'eau, mais la consom
 
 #figure(
   image(
-    "figures/photo_centrifugeuse.png", width: 70%, 
+    "../figures/photo_centrifugeuse.png", width: 70%, 
   ),
   caption: [Photographie de la centrifugeuse utilisée],
 ) <Fig-Centrifugeuse>
@@ -109,8 +109,8 @@ utilise ibidem avec le style de citation
     columns: (50%, 50%),
     gutter: 0.5em,
     column-gutter: 1em,
-    image("logos/logo_amu.svg", width: 50%),
-    image("logos/logo_amu.svg", width: 50%),
+    image("../logos/logo_amu.svg", width: 50%),
+    image("../logos/logo_amu.svg", width: 50%),
     "a)",
     "b)",
   ),

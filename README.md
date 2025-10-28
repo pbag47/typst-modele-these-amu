@@ -62,4 +62,4 @@ Dans ce cas, on commence toujours par importer ```default_amu_template```, puis 
 
 ## Fichiers et dépendances
 
-![](drawio_diagrams/dependancies.drawio.svg)
+![Diagramme drawio de l'organisation des fichiers et des imports](drawio_diagrams/dependancies.drawio.svg)

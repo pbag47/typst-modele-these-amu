@@ -1,5 +1,5 @@
 
-#import "_config.typ"
+#import "../_config.typ"
 #show: _config.default_amu_template
 
 
@@ -57,4 +57,4 @@
 // citation with the "alphabetic" style, which is not supported by default on Typst
 #cite(<mohamed_clinical_2014>, form: "full")
 #pagebreak()
-#image("articles/BMC-1471-2334-14-S2-O1.svg", width: 100%, height: 100%)
+#image("../articles/BMC-1471-2334-14-S2-O1.svg", width: 100%, height: 100%)

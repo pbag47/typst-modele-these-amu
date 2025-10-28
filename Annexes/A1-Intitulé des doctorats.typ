@@ -1,5 +1,5 @@
 
-#import "_config.typ"
+#import "../_config.typ"
 #show: _config.default_amu_template
 #show: _config.appendix
 

@@ -1,5 +1,5 @@
 
-#import "_config.typ"
+#import "../_config.typ"
 #show: _config.default_amu_template
 #show: _config.appendix
 
@@ -25,7 +25,7 @@ Some elements must be used:
 
 #align(
   center,
-  image("figures/titre.svg", height: 50%),
+  image("../figures/titre.svg", height: 50%),
 )
 
 + The title page of AMU thesis: it is written in French and complies with the AMU graphic charter;
@@ -47,7 +47,7 @@ For the body of your thesis, if your doctoral school does not give you more spec
 
 #align(
   center,
-  image("figures/geometry.svg"),
+  image("../figures/geometry.svg"),
 )
 
 Your thesis must be submitted online in PDF 1.5 minimum version format on #link("https://www.adum.fr/")[adum.fr].
