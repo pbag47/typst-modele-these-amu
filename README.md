@@ -25,7 +25,7 @@ Il contient des templates qui permettent d'imiter la mise en page, le style et l
 > [!IMPORTANT]
 > Ce projet est issu d'une initiative personnelle. Aix-Marseille Université (AMU) n'est aucunement affiliée à ce répertoire -> il ne s'agit pas d'un répertoire officiel validé par AMU. L'école doctorale reste donc décisionnaire, au cas par cas, quant à la validité de ce modèle et de son utilisation pour le manuscrit de thèse.
 
-## "Guidelines"
+## Ligne de conduite
 
 Ce répertoire propose uniquement des templates qui fonctionnent avec l'installation minimale de Typst, c'est-à-dire sans aucune dépendance à un package externe.
 L'objectif derrière cette contrainte est d'obtenir un projet "plug-&-play" qui fonctionne dès l'installation, n'impose pas le choix d'un package externe particulier et ne risque pas de casser au fil du temps avec les différentes mises-à-jour.
@@ -48,7 +48,7 @@ Ainsi, malgré mes efforts pour reproduire au mieux le modèle de thèse LaTeX, 
 > [!NOTE]
 > Les fonctionnalités manquantes par rapport au modèle officiel sont marquées par les balises "TODO:" dans les fichiers sources, et suivies dans des Issues sur GitHub
 
-<b><p style="text-align: center;"> Le répertoire est en évolution et les contributions au code sont bienvenues. </p></b>
+<b><p align="center"> Le répertoire est en évolution et les contributions au code sont bienvenues. </p></b>
 
 
 ## Structure
