@@ -16,7 +16,7 @@
 #import "page_headers.typ": default_page_header
 
 
-#let default_amu_template(content) = {
+#let default(content) = {
   set page(
     paper: "a4",
     margin: 2.5cm,

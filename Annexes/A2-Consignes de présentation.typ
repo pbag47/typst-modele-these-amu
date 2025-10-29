@@ -13,10 +13,8 @@
 // limitations under the License.
 
 
-#import "../_config.typ"
-#show: _config.default_amu_template
-#show: _config.appendix
-
+#import "../amu_templates.typ"
+#show: amu_templates.appendix
 
 #show ref: it => {
   let el = it.element

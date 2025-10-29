@@ -13,9 +13,13 @@
 // limitations under the License.
 
 
-#import "templates/default_amu_template.typ": default_amu_template
-#import "templates/default_appendix_template.typ": appendix
-#import "templates/endnotes.typ": endnote, showendnotes
+#import "page_headers.typ": appendix_page_header
+#import "default.typ": default
 
-// TODO:
-// #import "templates/index.typ": index, showindex
+#let appendix(content) = {
+  show: default
+  show heading.where(level: 1): set heading(numbering: none)
+  set heading(numbering: (first, ..nums) => numbering("A.1", ..nums))
+  set page(header: context appendix_page_header())
+  content
+}

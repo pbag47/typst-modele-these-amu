@@ -55,27 +55,29 @@ Ainsi, malgré mes efforts pour reproduire au mieux le modèle de thèse LaTeX, 
 
 Les templates sont défninis dans le dossier "templates".
 Parmi eux, on compte : 
-- ```default_amu_template``` : le template principal pour le corps du manuscrit
-- ```default_appendix_template``` : le template pour les annexes
-- ```endnotes``` et ```showendnotes``` : implémentation "à la main" des notes de fin de document
-- ```page_headers``` : implémentation "à la main" des en-têtes des pages.
+- ```default``` : le template principal pour le corps du manuscrit
+- ```appendix``` : le template pour les annexes
+- ```endnotes``` et ```showendnotes``` : l'implémentation "à la main" des notes de fin de document
+- ```page_headers``` : l'implémentation "à la main" des en-têtes des pages.
+- ```cover_page```: le template pour la page de garde
+- ```affidavit```: le template pour l'Affidavit
 
-Le fichier ```_config.typ``` sert à regrouper ces templates dans un conteneur qui peut être importé et appelé par n'importe quel autre fichier du projet.
+Le fichier ```amu_templates.typ``` sert à regrouper ces templates dans un conteneur qui peut être importé et appelé par n'importe quel autre fichier du projet.
 
 Il est recommandé de fragmenter les différents chapitres, voire les différentes sections, dans des fichiers séparés, puis de les inclure un-à-un dans un fichier principal (appelé ```thèse.typ``` dans ce projet).
 
-Sur chaque fichier, on commence par importer et appliquer ```default_amu_template``` à partir du fichier ```_config.typ```. 
+Sur chaque fichier, on commence par importer et appliquer le template ```default``` à partir du fichier ```amu_templates.typ```. 
 Puis, on ajoute le contenu.
 
 ```typst
-#import "_config.typ"
-#show: _config.default_amu_template
+#import "amu_templates.typ"
+#show: amu_templates.default
 
+// Contenu
 ```
 
 Ces lignes appliquent les règles globales de mise en page qui ont été définies pour tout le corps du manuscrit.
-Si besoin, ces règles globales peuvent être réécrites localement pour des parties qui dérogent au format de base (par exemple : la page de garde, les annexes).
-Dans ce cas, on commence toujours par importer ```default_amu_template```, puis on définit un template local qui réécrit uniquement les règles à modifier, et on l'applique en suivant. Voir un exemple sur ```page de garde.typ```.
+Si besoin, ces règles globales peuvent être réécrites localement pour des parties qui dérogent au format de base.
 
 
 ## Fichiers et dépendances

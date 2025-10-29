@@ -13,14 +13,14 @@
 // limitations under the License.
 
 
-#import "../_config.typ"
-#show: _config.default_amu_template
-#show: _config.appendix
+#import "../amu_templates.typ"
+#show: amu_templates.appendix
 
 #show heading.where(level: 3): set heading(
   numbering: none,
   outlined: false,
 )
+
 
 == Intitulé des doctorats <Annexe-Intitulé>
 

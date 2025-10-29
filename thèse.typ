@@ -13,19 +13,12 @@
 // limitations under the License.
 
 
-#import "_config.typ"
-#import "page de garde.typ": cover_page
+#import "amu_templates.typ"
 
-#show: _config.default_amu_template
+#show: amu_templates.default
 
-#cover_page(
-  discipline: [Liste des disciplines en annexe @Annexe-Intitulé],
-  specialty: [Liste des spécialités en annexe @Annexe-Intitulé],
-  doctoral_school: [Liste des écoles doctorales en annexe @Annexe-Intitulé],
-  guidelines: [
-    Consignes de présentation détaillées des pages liminaires en annexe @Annexe-Consignes 
-  ],
-)
+
+#include "page de garde.typ"
 #include "affidavit.typ"
 #include "liste des publications.typ"
 #include "résumé.typ"
@@ -54,6 +47,6 @@
 // #pagebreak()
 // #context _config.showindex()
 #pagebreak()
-#_config.showendnotes()
+#amu_templates.showendnotes()
 #include "annexes.typ"
 

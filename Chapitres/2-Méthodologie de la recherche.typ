@@ -13,34 +13,39 @@
 // limitations under the License.
 
 
-#import "../_config.typ"
-#show: _config.default_amu_template
+#import "../amu_templates.typ"
+#show: amu_templates.default
+
 
 = Méthodologie de la recherche
 
+
 == Matériel et méthodes
+
 
 === Modèle animal
 
 #lorem(150)
 
-Une première note de fin de document #_config.endnote[Première note de fin de document.], 
-une deuxième #_config.endnote[Deuxième note de fin de document.] et ...
-#_config.endnote[... note de fin de document.] 
-#_config.endnote[... note de fin de document.] 
-#_config.endnote[... note de fin de document.] 
-#_config.endnote[... note de fin de document.] 
-#_config.endnote[... note de fin de document.] 
-#_config.endnote[... note de fin de document.] 
-#_config.endnote[... note de fin de document.] 
-#_config.endnote[#lorem(50)].
+Une première note de fin de document #amu_templates.endnote[Première note de fin de document.], 
+une deuxième #amu_templates.endnote[Deuxième note de fin de document.] et ...
+#amu_templates.endnote[... note de fin de document.] 
+#amu_templates.endnote[... note de fin de document.] 
+#amu_templates.endnote[... note de fin de document.] 
+#amu_templates.endnote[... note de fin de document.] 
+#amu_templates.endnote[... note de fin de document.] 
+#amu_templates.endnote[... note de fin de document.] 
+#amu_templates.endnote[... note de fin de document.] 
+#amu_templates.endnote[#lorem(50)].
 
 
 === Traitement expérimental
 
+
 ==== Hypergravité <Chap-Methodo_Part-Hypergravité>
 
 L'hypergravité consiste à augmenter la force du vecteur gravitaire en lui sur-imposant la force centrifuge. En effet, la force centrifuge induite par la rotation se surimpose à la gravité terrestre ce qui permet d'avoir une force résultante dépendante de la vitesse de rotation. On utilise pour cela des centrifugeuses qui sont des carrousels équipés de nacelles suspendues à des axes libres permettant à la force résultante d'être perpendiculaire au plancher de la nacelle et ainsi obtenir une «gravité» dont la force est supérieure à la gravité terrestre tout en maintenant, pour les individus expérimentaux, l'orientation "naturelle" de celle-ci.
+
 
 ==== La centrifugeuse
 
@@ -65,6 +70,7 @@ Les animaux ont à disposition 400g de nourriture et 500mL d'eau, mais la consom
 
 #lorem(50)
 
+
 == Deuxième partie du deuxième chapitre
 
 Le faisceau passe ensuite dans un module comprenant un cristal non linéaire permettant de doubler le féquence (excitation de 345nm à 500nm). 
@@ -72,9 +78,11 @@ Toutes les mesures ont été faites entre 400nm et 1200nm avec un pas de 5nm.
 
 #lorem(100)
 
+
 === Première sous-partie de la deuxième partie
 
 #lorem(50)
+
 
 === Deuxième sous-partie de la deuxième partie
 

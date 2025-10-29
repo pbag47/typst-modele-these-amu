@@ -13,11 +13,12 @@
 // limitations under the License.
 
 
-#import "_config.typ"
-#show: _config.default_amu_template
+#import "amu_templates.typ"
+#show: amu_templates.default
 
 #set heading(numbering: none)
 #set text(lang: "en")
+
 
 = Abstract and Keywords
 <Abstract>

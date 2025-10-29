@@ -1,58 +1,12 @@
-// Copyright 2025 Pierre BAGNARA
 
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-
-//     https://www.apache.org/licenses/LICENSE-2.0
-
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+#import "amu_templates.typ"
 
 
-#import "_config.typ"
-#show: _config.default_amu_template
-
-#set heading(numbering: none)
-#set page(numbering: none)
-
-
-= Affidavit
-<Affidavit>
-
-Je soussigné·e, --NOM--,
-déclare par la présente que le travail présenté dans ce manuscrit est mon propre travail, réalisé sous la direction scientifique de --NOM--,
-dans le respect des principes d'honnêteté, d'intégrité et de responsabilité inhérents à la mission de recherche. Les travaux de recherche et la rédaction de ce manuscrit ont été réalisés dans le respect à la fois de la charte nationale de déontologie des métiers de la recherche et de la charte AMU relative à la lutte contre le plagiat.
-
-Ce travail n'a pas été précédemment soumis en France ou à l'étranger dans une version identique ou similaire à un organisme examinateur.
-
-Fait à --LIEU-- le --DATE--
-
-#align(
-  right, 
-  image("figures/example-image-a.png", height: 5em)
+#amu_templates.affidavit(
+  name: [[Prénom NOM]],
+  supervisor: [[Prénom NOM]],
+  place: [[ville]],
+  date: [[date]], 
+  // signature_file: "image de signature.png", 
+  language: "fr",
 )
-
-#v(1fr)
-
-#align(
-  center,
-  image("logos/by-nc-nd-eu.svg"),
-)
-
-#align(
-  center,
-  text[
-    Cette œuvre est mise à disposition selon les termes de la 
-    #link(
-      "https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr"
-    )[
-        Licence Creative Commons Attribution - Pas d'Utilisation Commerciale - Pas de Modification 4.0 International
-    ]
-    // consultez les conditions de la licence cc by-nc-nd, vous pouvez appliquer une licence moins restrictive, cc by-nc-sa par exemple)
-  ]
-)
-

@@ -13,12 +13,11 @@
 // limitations under the License.
 
 
-#import "page_headers.typ": appendix_page_header
+#import "templates/default.typ": default
+#import "templates/appendix.typ": appendix
+#import "templates/cover_page.typ": cover_page
+#import "templates/affidavit.typ": affidavit
+#import "templates/endnotes.typ": endnote, showendnotes
 
-
-#let appendix(content) = {
-  show heading.where(level: 1): set heading(numbering: none)
-  set heading(numbering: (first, ..nums) => numbering("A.1", ..nums))
-  set page(header: context appendix_page_header())
-  content
-}
+// TODO:
+// #import "templates/index.typ": index, showindex

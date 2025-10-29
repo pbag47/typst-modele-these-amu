@@ -13,9 +13,8 @@
 // limitations under the License.
 
 
-#import "_config.typ"
-#show: _config.default_amu_template
-#show: _config.appendix
+#import "amu_templates.typ"
+#show: amu_templates.appendix
 
 // Le compteur de titres est remis à zéro pour que la première annexe soit numérotée "A", au lieu de reprendre la numérotation là où la partie précédente s'était arrétée.
 #counter(heading).update(0)
