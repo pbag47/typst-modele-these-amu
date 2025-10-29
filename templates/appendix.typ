@@ -14,12 +14,48 @@
 
 
 #import "page_headers.typ": appendix_page_header
-#import "default.typ": default
+
 
 #let appendix(content) = {
-  show: default
-  show heading.where(level: 1): set heading(numbering: none)
-  set heading(numbering: (first, ..nums) => numbering("A.1", ..nums))
+
+  // ------------- Pages //
   set page(header: context appendix_page_header())
+
+
+  // ------------- Titres //
+  show heading.where(level: 1): set heading(numbering: none)
+  show heading.where(level: 3): set heading(
+    numbering: none,
+    outlined: false,
+  )
+  show heading.where(level: 4): set heading(
+    numbering: none,
+    outlined: false,
+  )
+  set heading(numbering: (first, ..nums) => numbering("A.1", ..nums))
+
+
+  // ------------- Références //
+  show ref: it => {
+    let el = it.element
+    if it.element != none and it.element.func() == heading {
+      link(
+        it.element.location(),
+        [#text(it.element.body)]
+      )
+    } else {
+      it
+    }
+  }
   content
+}
+
+
+#let appendix_title_page = {
+  // Page où "ANNEXES" est écrit au centre
+  set page(header: none)
+  set heading(numbering: none)
+  v(1fr)
+  align(center)[= #upper[Annexes]]
+  v(1fr)
 }

@@ -13,9 +13,6 @@
 // limitations under the License.
 
 
-#import "default.typ": default
-
-
 #let local_template(doc) = {
   set page(
     paper: "a4",
@@ -115,8 +112,6 @@
 
 ) = {
 
-
-  show: default
   show: local_template
 
   grid(

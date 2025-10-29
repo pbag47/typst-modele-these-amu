@@ -17,6 +17,8 @@
 
 
 #let default(content) = {
+
+  // ------------- Pages //
   set page(
     paper: "a4",
     margin: 2.5cm,
@@ -24,6 +26,8 @@
     header: context default_page_header(),
   )
 
+
+  // ------------- Paragraphes //
   set par(
     leading: 0.55em, 
     spacing: 0.55em, 
@@ -31,27 +35,35 @@
     justify: true,
   )
 
+
+  // ------------- Texte //
   set text(
     font: "Cambria", // "Cambria", "New Computer Modern"
     size: 12pt, 
     lang: "fr",
   )
 
-  // Format des titres
+
+  // ------------- Titres //
+  // Numérotation des titres
   set heading(numbering: "1.1.1.1")
+
+  // Format des titres
   show heading.where(level: 1): set text(weight: "bold", size: 24pt) 
   show heading.where(level: 2): set text(weight: "bold", size: 20pt)
   show heading.where(level: 3): set text(weight: "bold", size: 18pt)
   show heading.where(level: 4): set text(weight: "bold", size: 16pt)
+
   // Espacement autour des titres
   show heading.where(level: 1): set block(above: 1.4em, below: 1.5em)
   show heading.where(level: 2): set block(above: 1.4em, below: 1.4em)
   show heading.where(level: 3): set block(above: 1.4em, below: 1.2em)
   show heading.where(level: 4): set block(above: 1.4em, below: 1em)
 
+
+  // ------------- Figures //
   // Remise à zéro de la numérotation des figures lorqu'on entre dans un nouveau chapitre
   show heading.where(level: 1): it => {
-    // counter(math.equation).update(0)
     counter(figure.where(kind: image)).update(0)
     counter(figure.where(kind: table)).update(0)
     it
@@ -63,21 +75,37 @@
       numbering("1.1", counter(heading).get().first(), n)
     },
   )
+
+  // Format des références aux figures
   show figure.where(kind: image): set figure(supplement: smallcaps[Figure])
   show figure.where(kind: table): set figure(supplement: smallcaps[Tableau])
+
   // Espacement autour des figures
   show figure: set block(spacing: 2em)
+
+
+  // ------------- Images //
+  // Espacement autour des images
+  show image: set block(spacing: 1em)
   
+
+  // ------------- Liens //
   // Format des liens
   show link: set text(fill: blue)
 
+
+  // ------------- Citations //
   // Format des blocs de citation
   set quote(block: true)
   show quote: set pad(x: 3em)
 
+
+  // ------------- Equations //
   // Format des numéros d'équation
   set math.equation(numbering: "(1)", supplement: none)
 
+
+  // ------------- Références
   // Format des références dans le texte
   // Source: documentation Typst
   // https://typst.app/docs/reference/model/ref/#customization

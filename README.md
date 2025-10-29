@@ -66,18 +66,36 @@ Le fichier ```amu_templates.typ``` sert à regrouper ces templates dans un conte
 
 Il est recommandé de fragmenter les différents chapitres, voire les différentes sections, dans des fichiers séparés, puis de les inclure un-à-un dans un fichier principal (appelé ```thèse.typ``` dans ce projet).
 
-Sur chaque fichier, on commence par importer et appliquer le template ```default``` à partir du fichier ```amu_templates.typ```. 
-Puis, on ajoute le contenu.
 
+## Points à noter sur les commandes ```#set``` et ```#show```
+
+Lorsqu'une commande ```#show``` ou ```#set``` est appliquée, elle se propage dans toute une zone d'effet. La zone d'effet est délimitée entre l'appel de la commande, et... : 
+- la fin du bloc courant (```}```)
+- s'il n'y a pas de bloc courant, la fin du fichier courant
+
+Ainsi : 
+- Les commandes ```#show``` et ```#set``` écrites dans le document principal se propagent dans toute la suite du document, y compris dans les fichiers ajoutés avec ```#include```
+- Les commandes ```#show``` et ```#set``` écrites à l'intérieur des fichiers ajoutés avec ```#include``` ne sont appliquées que sur ces fichiers, elles n'ont pas d'autres répercussions sur le document principal
+- Les commandes ```#show``` et ```#set``` écrites à l'intérieur des templates ne sont appliqués que sur ces templates, elles n'ont pas d'autres répercussions ailleurs
+
+
+## Application des templates
+
+Le template par défaut est appliqué sur le fichier principal, au tout début du fichier :
 ```typst
 #import "amu_templates.typ"
 #show: amu_templates.default
 
 // Contenu
 ```
+A partir de là, tous les fichiers inclus au document principal avec ```#include``` utilisent ce template.
 
-Ces lignes appliquent les règles globales de mise en page qui ont été définies pour tout le corps du manuscrit.
-Si besoin, ces règles globales peuvent être réécrites localement pour des parties qui dérogent au format de base.
+Lorsqu'une partie du document déroge aux règles fixées par le template principal, deux solutions :
+- Soit isoler la partie dans un fichier et écrire les commandes ```#set``` et ```#show``` que l'on veut appliquer au début du fichier (exemple dans ```abstract.typ```)
+- Soit écrire un template spécifique (exemple dans ```affidavit.typ```)
+
+>[!WARNING]
+> Ecrire une commande ```#set``` ou ```#show``` dans le fichier principal revient à modifier les règles globales du template ```default``` qui sont appliquées sur tout le document. Mieux vaut directement modifier le template ```default``` dans ```templates/default.typ``` pour stocker toutes les règles globales au même endroit.
 
 
 ## Fichiers et dépendances

@@ -13,9 +13,6 @@
 // limitations under the License.
 
 
-#import "default.typ": default
-
-
 #let affidavit(
   name: [--NOM--],
   supervisor: [--DIRECTEUR-DE-TH#upper[è]SE--],
@@ -24,8 +21,6 @@
   signature_file: "template_images/example-image-a.png", 
   language: "fr",
 ) = {
-
-  show: default
 
   set heading(numbering: none)
   set page(numbering: none)

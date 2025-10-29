@@ -13,15 +13,6 @@
 // limitations under the License.
 
 
-#import "../amu_templates.typ"
-#show: amu_templates.appendix
-
-#show heading.where(level: 3): set heading(
-  numbering: none,
-  outlined: false,
-)
-
-
 == Intitulé des doctorats <Annexe-Intitulé>
 
 - Discipline

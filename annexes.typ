@@ -14,17 +14,17 @@
 
 
 #import "amu_templates.typ"
-#show: amu_templates.appendix
+
 
 // Le compteur de titres est remis à zéro pour que la première annexe soit numérotée "A", au lieu de reprendre la numérotation là où la partie précédente s'était arrétée.
 #counter(heading).update(0)
 
-// Page où "ANNEXES" est écrit au centre
-#set page(header: none)
-#v(1fr)
-#align(center)[= #upper[Annexes]]
-#v(1fr)
 
+#show: amu_templates.appendix
+#amu_templates.appendix_title_page
+#pagebreak()
 #include "Annexes/A1-Intitulé des doctorats.typ"
+#pagebreak()
 #include "Annexes/A2-Consignes de présentation.typ"
+#pagebreak()
 #include "Annexes/A3-Presentation guidelines.typ"

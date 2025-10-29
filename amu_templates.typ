@@ -14,7 +14,7 @@
 
 
 #import "templates/default.typ": default
-#import "templates/appendix.typ": appendix
+#import "templates/appendix.typ": appendix, appendix_title_page
 #import "templates/cover_page.typ": cover_page
 #import "templates/affidavit.typ": affidavit
 #import "templates/endnotes.typ": endnote, showendnotes

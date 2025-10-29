@@ -14,38 +14,41 @@
 
 
 #import "amu_templates.typ"
-
 #show: amu_templates.default
 
 
 #include "page de garde.typ"
+#pagebreak()
 #include "affidavit.typ"
+#pagebreak()
 #include "liste des publications.typ"
+#pagebreak()
 #include "résumé.typ"
+#pagebreak()
 #include "abstract.typ"
+#pagebreak()
 #include "remerciements.typ"
-#outline(
-  title: [= Table des matières],
-)
 #pagebreak()
-#outline(
-  title: [= Table des figures],
-  target: figure.where(kind: image),
-)
+#outline(title: [= Table des matières])
 #pagebreak()
-#outline(
-  title: [= Liste des tableaux],
-  target: figure.where(kind: table),
-)
+#outline(title: [= Table des figures], target: figure.where(kind: image))
+#pagebreak()
+#outline(title: [= Liste des tableaux], target: figure.where(kind: table))
+#pagebreak()
 #include "introduction.typ"
+#pagebreak()
 #include "Chapitres/1-Généralités.typ"
+#pagebreak()
 #include "Chapitres/2-Méthodologie de la recherche.typ"
+#pagebreak()
 #include "Chapitres/3-Résultats.typ"
+#pagebreak()
 #include "conclusion.typ"
+#pagebreak()
 #bibliography("biblio.bib")
 // TODO:
 // #pagebreak()
-// #context _config.showindex()
+// #amu_templates.showindex()
 #pagebreak()
 #amu_templates.showendnotes()
 #include "annexes.typ"

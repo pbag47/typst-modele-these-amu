@@ -14,7 +14,6 @@
 
 
 #import "../amu_templates.typ"
-#show: amu_templates.default
 
 
 = Méthodologie de la recherche

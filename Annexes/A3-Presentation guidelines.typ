@@ -13,21 +13,6 @@
 // limitations under the License.
 
 
-#import "../amu_templates.typ"
-#show: amu_templates.appendix
-
-#show ref: it => {
-  let el = it.element
-  if it.element != none and it.element.func() == heading {
-    link(
-      it.element.location(),
-      [#text(it.element.body)]
-      )
-  } else {
-    it
-  }
-}
-
 #set text(lang: "en")
 
 

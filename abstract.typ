@@ -13,9 +13,6 @@
 // limitations under the License.
 
 
-#import "amu_templates.typ"
-#show: amu_templates.default
-
 #set heading(numbering: none)
 #set text(lang: "en")
 
