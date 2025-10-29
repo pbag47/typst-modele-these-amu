@@ -52,7 +52,7 @@
 }
 
 
-#let jury_entry_template(input_dictionnary) = {
+#let jury_entry_template(input_dictionary) = {
   // input_dictionnary est un dictionnaire qui prend la forme suivante : 
   // (
   //    name: content,
@@ -63,11 +63,11 @@
   grid(
     columns: (50%, 1fr),
     row-gutter: 0.5em,
-    input_dictionnary.name,
-    input_dictionnary.role,
+    input_dictionary.name,
+    input_dictionary.role,
     grid.cell(
       colspan: 2,
-      input_dictionnary.title,
+      input_dictionary.title,
     ),
   )
 }
