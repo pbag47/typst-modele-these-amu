@@ -39,7 +39,7 @@
       dans le respect des principes d'honnêteté, d'intégrité et de responsabilité inhérents à la mission de recherche. Les travaux de recherche et la rédaction de ce manuscrit ont été réalisés dans le respect à la fois de la charte nationale de déontologie des métiers de la recherche et de la charte AMU relative à la lutte contre le plagiat.
 
       Ce travail n'a pas été précédemment soumis en France ou à l'étranger dans une version identique ou similaire à un organisme examinateur.
-
+      #v(1em)
       Fait à #place le #date
     ]
   } else if language == "en" {
@@ -50,7 +50,7 @@
       in accordance with the principles of honesty, integrity and responsibility inherent to the research mission. The research work and the writing of this manuscript have been carried out in compliance with both the french national charter for Research Integrity and AMU charter on the fight against plagiarism.
       
       This work has not been submitted previously either in this country or in another country in the same or in a similar version to any other examination body.
-      
+      #v(1em)
       #place, #date
     ]
   }

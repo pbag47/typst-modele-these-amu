@@ -53,7 +53,7 @@
 
 
 #let jury_entry_template(input_dictionary) = {
-  // input_dictionnary est un dictionnaire qui prend la forme suivante : 
+  // input_dictionary est un dictionnaire qui prend la forme suivante : 
   // (
   //    name: content,
   //    role: content,
