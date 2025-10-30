@@ -75,7 +75,7 @@ Lorsqu'une commande ```#show``` ou ```#set``` est appliquée, elle se propage da
 Ainsi : 
 - Les commandes ```#show``` et ```#set``` écrites dans le document principal se propagent dans toute la suite du document, y compris dans les fichiers ajoutés avec ```#include```
 - Les commandes ```#show``` et ```#set``` écrites à l'intérieur des fichiers ajoutés avec ```#include``` ne sont appliquées que sur ces fichiers, elles n'ont pas d'autres répercussions sur le document principal
-- Les commandes ```#show``` et ```#set``` écrites à l'intérieur des templates ne sont appliqués que sur ces templates, elles n'ont pas d'autres répercussions ailleurs
+- Les commandes ```#show``` et ```#set``` écrites à l'intérieur des templates ne sont appliquées que sur ces templates, elles n'ont pas d'autres répercussions ailleurs
 
 
 ## Application des templates
