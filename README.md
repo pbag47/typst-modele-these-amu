@@ -40,7 +40,6 @@ Ainsi, malgré mes efforts pour reproduire au mieux le modèle de thèse LaTeX, 
 > [!NOTE]
 > Ces fonctionnalités peuvent être ajoutées par des packages externes (voir [Glossarium](https://typst.app/universe/package/glossarium/) par exemple). C'est à chaque utilisateur de rechercher les packages externes dont il a besoin.
 - Certaines parties ne sont pas tout-à-fait reproduites à l'identique
-    - Liens manquants sur les notes de fin de document pour retourner au texte d'origine
     - Les styles de bibliographie disponibles sur Typst sont moins nombreux que sur LaTeX, et le format des citations est moins flexible
 - Parfois, Typst impose certaines contraintes
     - Il est impossible d'inclure un PDF tel quel dans un document Typst. Une solution est de convertir les PDF à inclure au format SVG (un autre format vectoriel), puis de les ajouter au document Typst sous forme d'images
