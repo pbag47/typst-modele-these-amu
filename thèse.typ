@@ -29,11 +29,7 @@
 #pagebreak()
 #include "remerciements.typ"
 #pagebreak()
-#outline(title: [= Table des matières])
-#pagebreak()
-#outline(title: [= Table des figures], target: figure.where(kind: image))
-#pagebreak()
-#outline(title: [= Liste des tableaux], target: figure.where(kind: table))
+#include "table des matières.typ"
 #pagebreak()
 #include "introduction.typ"
 #pagebreak()
