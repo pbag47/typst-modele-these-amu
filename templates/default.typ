@@ -104,8 +104,11 @@
   // Format des numéros d'équation
   set math.equation(numbering: "(1)", supplement: none)
 
+  // Espacement autour des équations
+  show math.equation: set block(inset: 1em)
 
-  // ------------- Références
+
+  // ------------- Références //
   // Format des références dans le texte
   // Source: documentation Typst
   // https://typst.app/docs/reference/model/ref/#customization
