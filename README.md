@@ -100,3 +100,13 @@ Lorsqu'une partie du document déroge aux règles fixées par le template princi
 ## Fichiers et dépendances
 
 ![Diagramme drawio de l'organisation des fichiers et des imports](drawio_diagrams/dependancies.drawio.svg)
+
+
+## Packages externes recommandés
+
+Ci-dessous des recommandations de packages externes pour compléter les fonctionnalités de ce projet :
+- [equate](https://typst.app/universe/package/equate)
+- [glossarium](https://typst.app/universe/package/glossarium)
+- [physica](https://typst.app/universe/package/physica)
+- [unify](https://typst.app/universe/package/unify)
+- [suboutline](https://typst.app/universe/package/suboutline)
