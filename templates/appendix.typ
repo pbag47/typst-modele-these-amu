@@ -23,7 +23,13 @@
 
 
   // ------------- Titres //
+  // Titre de niveau 1 : "ANNEXES"
   show heading.where(level: 1): set heading(numbering: none)
+  // Titres de niveau 2 : titres de chaque annexe
+  // On définit la fonction de numérotation pour ignorer le niveau 1
+  show heading.where(level: 2): set heading(
+    numbering: {(..num) => numbering("A", num.pos().last())}
+  )
   show heading.where(level: 3): set heading(
     numbering: none,
     outlined: false,
@@ -32,12 +38,11 @@
     numbering: none,
     outlined: false,
   )
-  set heading(numbering: (first, ..nums) => numbering("A.1", ..nums))
 
 
   // ------------- Références //
+  // Références à d'autres parties depuis un texte dans les annexes
   show ref: it => {
-    let el = it.element
     if it.element != none and it.element.func() == heading {
       link(
         it.element.location(),

@@ -105,7 +105,7 @@
   set math.equation(numbering: "(1)", supplement: none)
 
   // Espacement autour des équations
-  show math.equation: set block(inset: 1em)
+  show math.equation: set block(inset: 0.5em)
 
 
   // ------------- Références //
@@ -121,15 +121,18 @@
     ){
       link(
         it.element.location(),
-        numbering(
-          it.element.numbering,
-          ..counter(it.element.func()).at(it.element.location()),
-        )
+        [
+          #numbering(
+            it.element.numbering,
+            ..counter(it.element.func()).at(it.element.location()),
+          )
+        ]
       )
     } else {
       it
     }
   }
+
 
   // Label servant à exclure le précédent titre de la table des matières
   show <exclude_heading_from_table_of_contents>: set heading(outlined: false)

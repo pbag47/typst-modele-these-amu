@@ -14,45 +14,59 @@
 
 
 #let default_page_header() = {
-  let selector = selector(heading).before(here())
-  let level = counter(selector)
-  let headings = query(selector)
+  // On recense tous les titres précédents qui sont listés dans la table des matières
+  let header_selector = selector(heading)
+    .before(here())
+    .and(heading.where(outlined: true))
+  let previous_headers = query(header_selector)
+
+  // Pas d'en-tête s'il n'y a pas eu de titre avant la page actuelle
+  if previous_headers.len() == 0 {
+    return
+  }
   
-  // Pas d'en-tête sur les pages où un chapitre commence
+  // Pas d'en-tête sur les pages où un chapitre commence (chapitre = titre de niveau 1)
   if query(heading.where(level: 1)).any(it => it.location().page() == here().page()) {
     return
   }
 
   // On sélectionne uniquement les titres de niveaux 1 et 2 pour les afficher dans l'en-tête
-  let headings_shown = (1, 2)
-  let heading_max_level = calc.max(..headings_shown)
-  let heading_text = headings_shown.map(
+  let shown_header_levels = (1, 2)
+
+  // On ignore tous les niveaux supérieurs à celui du dernier titre trouvé : Lorsqu'un nouveau chapitre commence et qu"il n'y a pas encore de nouvelle partie, on veut pouvoir afficher seulement le titre du chapitre. 
+  // Si ce filtrage est enlevé, l'en-tête recopie tel-quel le titre de la dernière partie trouvée, même si elle appartient à un autre chapitre
+  let last_header_level = previous_headers.last().level
+  let shown_header_levels = shown_header_levels.filter(it => it <= last_header_level)
+
+  // On définit ici le texte qui sera affiché dans l'en-tête
+  // Pour chaque niveau de titre :
+  // - on identifie le dernier titre qui correspond au niveau traité
+  // - on affiche sa numérotation suivie d'un point et d'un espace
+  // - on affiche son texte
+  // Toutes ces entrées sont ensuite concaténées, et le passage d'un niveau à l'autre est marqué par "---"
+  let page_header_text = shown_header_levels.map(
     (i) => {
-      let headings_at_this_level = headings
-        .filter(h => h.level == i)
-
-      if headings_at_this_level.len() == 0 {
-        return none 
-      }
-
+      let last_header_at_level_i = previous_headers.filter(h => h.level == i).last()
       numbering(
-        heading.numbering, 
-        counter(heading).at(headings_at_this_level.last().location()).last()
+        last_header_at_level_i.numbering,
+        counter(heading).at(last_header_at_level_i.location()).last()
       )
       [.]
-      h(1em)
-      headings_at_this_level.last().body
+      h(0.5em)
+      last_header_at_level_i.body
     }
   ).filter(it => it != none).join([#h(1em) --- #h(1em)])
 
-  align(right)[#heading_text]
+  // On écrit le texte de l'en-tête
+  align(right)[#page_header_text]
 }
 
 
 #let appendix_page_header() = {
-  let selector = selector(heading).before(here())
-  let level = counter(selector)
-  let headings = query(selector)
+  let header_selector = selector(heading)
+    .before(here())
+    .and(heading.where(outlined: true))
+  let previous_headers = query(header_selector)
   
   // Pas d'en-tête sur les pages où une annexe commence
   if query(heading.where(level: 2)).any(it => it.location().page() == here().page()) {
@@ -62,20 +76,16 @@
   // On ne sélectione que les titres de niveau 2 pour les afficher dans l'en-tête :
   // Le titre de niveau 1 est "ANNEXES"
   // Les titres de niveau 2 sont les titres de chaque annexe (A, B, C, etc...)
-  let level_2_headings = headings.filter(h => h.level == 2)
-  if level_2_headings.len() == 0 {
-    return none 
-  }
-
+  let last_appendix_header = previous_headers.filter(h => h.level == 2).last()
   align(
     right,
     [
       #numbering(
-        "A.",
-        counter(heading).at(level_2_headings.last().location()).last()
+        last_appendix_header.numbering,
+        counter(heading).at(last_appendix_header.location()).last()
       )
-      #h(1em)
-      #level_2_headings.last().body
+      #h(0.5em)
+      #last_appendix_header.body
     ]
   )
 }
