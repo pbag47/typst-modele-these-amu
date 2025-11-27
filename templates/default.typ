@@ -137,5 +137,8 @@
   // Label servant à exclure le précédent titre de la table des matières
   show <exclude_heading_from_table_of_contents>: set heading(outlined: false)
 
+  // Label servant à désactiver la numérotation de l'équation précédente
+  show <no_numbering>: set math.equation(numbering: none)
+
   content
 }

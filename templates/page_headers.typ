@@ -57,8 +57,16 @@
     }
   ).filter(it => it != none).join([#h(1em) --- #h(1em)])
 
+  // On définit l'alignement selon le numéro de la page (pair/impair)
+  let page_number = counter(page).get().first()
+  let alignment = if calc.odd(page_number) {
+    right 
+  } else {
+    left 
+  }
+
   // On écrit le texte de l'en-tête
-  align(right)[#page_header_text]
+  align(alignment)[#page_header_text]
 }
 
 
@@ -77,8 +85,17 @@
   // Le titre de niveau 1 est "ANNEXES"
   // Les titres de niveau 2 sont les titres de chaque annexe (A, B, C, etc...)
   let last_appendix_header = previous_headers.filter(h => h.level == 2).last()
+
+  // On définit l'alignement selon le numéro de la page (pair/impair)
+  let page_number = counter(page).get().first()
+  let alignment = if calc.odd(page_number) {
+    right 
+  } else {
+    left 
+  }
+
   align(
-    right,
+    alignment,
     [
       #numbering(
         last_appendix_header.numbering,
