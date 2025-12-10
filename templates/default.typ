@@ -31,7 +31,7 @@
   set par(
     leading: 0.55em, 
     spacing: 0.55em, 
-    first-line-indent: (amount: 0.5cm, all: true),
+    first-line-indent: (amount: 0.5cm, all: false),
     justify: true,
   )
 
@@ -106,6 +106,9 @@
 
   // Espacement autour des équations
   show math.equation: set block(inset: 0.5em)
+
+  // Les équations en ligne dans le texte sont encapsulées dans des "box", ce qui empêche les retours à la ligne
+  show math.equation.where(block: false): box
 
   // La numérotation des équations est désactivée sauf pour les équations qui ont un label
   show math.equation.where(block: true): it => {
