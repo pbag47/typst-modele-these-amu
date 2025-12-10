@@ -54,7 +54,7 @@ Malgré mes efforts pour reproduire au mieux le modèle de thèse LaTeX, plusieu
 
 ## Structure
 
-Les templates sont défninis dans le dossier "templates".
+Les templates sont définis dans le dossier "templates".
 Parmi eux, on compte : 
 - ```default``` : le template principal pour le corps du manuscrit
 - ```appendix``` : le template pour les annexes
