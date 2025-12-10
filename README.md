@@ -25,14 +25,16 @@ Il contient des templates qui permettent d'imiter la mise en page, le style et l
 > Ce projet est issu d'une initiative personnelle. Aix-Marseille Université (AMU) n'est aucunement affiliée à ce répertoire -> il ne s'agit pas d'un répertoire officiel validé par AMU. Les écoles doctorales restent donc décisionnaires, au cas par cas, quant à la validité de ce modèle et de son utilisation pour rédiger le manuscrit de thèse.
 
 
-## Ligne de conduite
+## Démarche et limites du modèle
 
 Ce répertoire propose uniquement des templates qui fonctionnent avec l'installation minimale de Typst, c'est-à-dire sans aucune dépendance à un package externe.
 L'objectif derrière cette contrainte est d'obtenir un projet "plug-&-play" qui fonctionne dès l'installation, n'impose pas le choix d'un package externe particulier et ne risque pas de casser au fil du temps avec les différentes mises-à-jour.
 
-Une conséquence de cette contrainte est que l'implémentation de fonctionnalités absentes sur l'installation de base de Typst doit se faire "à la main", en les codant soi-même (par exemple : les notes de fin de document). 
+<!-- Une conséquence de cette contrainte est que ce projet seul ne contient pas toutes les fonctionnalités que permet le modèle LaTeX. -->
 
-Ainsi, malgré mes efforts pour reproduire au mieux le modèle de thèse LaTeX, plusieurs différences sont à noter :
+<!-- Une conséquence de cette contrainte est que l'implémentation de fonctionnalités absentes sur l'installation de base de Typst doit se faire "à la main", en les codant soi-même (par exemple : les notes de fin de document).  -->
+
+Malgré mes efforts pour reproduire au mieux le modèle de thèse LaTeX, plusieurs différences sont à noter :
 - Certaines fonctionnalités restent manquantes
     - Index
     - Glossaire
@@ -66,7 +68,7 @@ Le fichier ```amu_templates.typ``` sert à regrouper ces templates dans un conte
 Il est recommandé de fragmenter les différents chapitres, voire les différentes sections, dans des fichiers séparés, puis de les inclure un-à-un dans un fichier principal (appelé ```thèse.typ``` dans ce projet).
 
 
-## Points à noter sur les commandes ```#set``` et ```#show```
+<!-- ## Points à noter sur les commandes ```#set``` et ```#show```
 
 Lorsqu'une commande ```#show``` ou ```#set``` est appliquée, elle se propage dans toute une zone d'effet. La zone d'effet est délimitée entre l'appel de la commande, et... : 
 - la fin du bloc courant (```}```)
@@ -75,7 +77,7 @@ Lorsqu'une commande ```#show``` ou ```#set``` est appliquée, elle se propage da
 Ainsi : 
 - Les commandes ```#show``` et ```#set``` écrites dans le document principal se propagent dans toute la suite du document, y compris dans les fichiers ajoutés avec ```#include```
 - Les commandes ```#show``` et ```#set``` écrites à l'intérieur des fichiers ajoutés avec ```#include``` ne sont appliquées que sur ces fichiers, elles n'ont pas d'autres répercussions sur le document principal
-- Les commandes ```#show``` et ```#set``` écrites à l'intérieur des templates ne sont appliquées que sur ces templates, elles n'ont pas d'autres répercussions ailleurs
+- Les commandes ```#show``` et ```#set``` écrites à l'intérieur des templates ne sont appliquées que sur ces templates, elles n'ont pas d'autres répercussions ailleurs -->
 
 
 ## Application des templates

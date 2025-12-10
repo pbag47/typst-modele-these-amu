@@ -46,7 +46,7 @@
 
   // ------------- Titres //
   // Numérotation des titres
-  set heading(numbering: "1.1.1.1")
+  set heading(numbering: "1.1.1.1", supplement: none)
 
   // Format des titres
   show heading.where(level: 1): set text(weight: "bold", size: 24pt) 
@@ -107,12 +107,22 @@
   // Espacement autour des équations
   show math.equation: set block(inset: 0.5em)
 
+  // La numérotation des équations est désactivée sauf pour les équations qui ont un label
+  show math.equation.where(block: true): it => {
+    if not it.has("label") and it.numbering != none {
+      counter(math.equation).update(v => v - 1)
+      [#math.equation(it.body, block: true, numbering: none)]
+    } else {
+      it
+    }
+  }
+
 
   // ------------- Références //
   // Format des références dans le texte
   // Source: documentation Typst
   // https://typst.app/docs/reference/model/ref/#customization
-  // Réadapté pour le format des références aux chapitres et aux figures.
+  // Réadapté pour le format des références aux chapitres et aux figures
   show ref: it => {
     if it.element != none and it.element.func() in (
       math.equation,
@@ -121,12 +131,10 @@
     ){
       link(
         it.element.location(),
-        [
-          #numbering(
-            it.element.numbering,
-            ..counter(it.element.func()).at(it.element.location()),
-          )
-        ]
+        [#numbering(
+          it.element.numbering,
+          ..counter(it.element.func()).at(it.element.location())
+        )]
       )
     } else {
       it
@@ -134,10 +142,13 @@
   }
 
 
-  // Label servant à exclure le précédent titre de la table des matières
+  // ------------- Labels fonctionnels //
+  // Label servant à exclure de la table des matières les titres qui le portent
   show <exclude_heading_from_table_of_contents>: set heading(outlined: false)
 
-  // Label servant à désactiver la numérotation de l'équation précédente
+  // Label servant à désactiver la numérotation des équations qui le portent
+  // /!\ Dépréciation /!\
+  // Ce label est remplacé par le comportement par défaut du template : pas de numérotation des équations lorsqu'elles n'ont pas de label
   show <no_numbering>: set math.equation(numbering: none)
 
   content
