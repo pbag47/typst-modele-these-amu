@@ -61,6 +61,7 @@
   set page(header: none)
   set heading(numbering: none)
   v(1fr)
-  align(center)[= #upper[Annexes]]
+  // align(center)[= #upper[Annexes]]
+  align(center)[= Annexes]
   v(1fr)
 }

@@ -16,6 +16,11 @@
 #import "page_headers.typ": default_page_header
 
 
+#let text_font = "Cambria"
+// #let text_font = "New Computer Modern"
+#let math_font = "New Computer Modern Math"
+
+
 #let default(content) = {
 
   // ------------- Pages //
@@ -24,21 +29,24 @@
     margin: 2.5cm,
     numbering: "1",
     header: context default_page_header(),
+    header-ascent: 2.5em,
+    footer-descent: 2.5em,
   )
 
 
   // ------------- Paragraphes //
   set par(
     leading: 0.55em, 
-    spacing: 0.55em, 
+    spacing: 1em, 
     first-line-indent: (amount: 0.5cm, all: false),
+    // first-line-indent: 0em,
     justify: true,
   )
 
 
   // ------------- Texte //
   set text(
-    font: "Cambria", // "Cambria", "New Computer Modern"
+    font: text_font,
     size: 12pt, 
     lang: "fr",
   )
@@ -101,11 +109,14 @@
 
 
   // ------------- Equations //
-  // Format des numéros d'équation
-  set math.equation(numbering: "(1)", supplement: none)
+  // Police d'écriture
+  show math.equation: set text(font: math_font)
 
   // Espacement autour des équations
-  show math.equation: set block(inset: 0.5em)
+  show math.equation: set block(inset: 0.2em)
+
+  // Format des numéros d'équation
+  set math.equation(numbering: "(1)", supplement: none)
 
   // Les équations en ligne dans le texte sont encapsulées dans des "box", ce qui empêche les retours à la ligne
   show math.equation.where(block: false): box
@@ -134,10 +145,11 @@
     ){
       link(
         it.element.location(),
-        [#numbering(
+        [#text(numbering(
           it.element.numbering,
           ..counter(it.element.func()).at(it.element.location())
-        )]
+        ),
+        font: "New Computer Modern Math")]
       )
     } else {
       it

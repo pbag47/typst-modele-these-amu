@@ -41,18 +41,22 @@
   // On définit ici le texte qui sera affiché dans l'en-tête
   // Pour chaque niveau de titre :
   // - on identifie le dernier titre qui correspond au niveau traité
-  // - on affiche sa numérotation suivie d'un point et d'un espace
+  // - on affiche sa numérotation suivie d'un point et d'un espace (si elle existe)
   // - on affiche son texte
   // Toutes ces entrées sont ensuite concaténées, et le passage d'un niveau à l'autre est marqué par "---"
   let page_header_text = shown_header_levels.map(
     (i) => {
+      let header_numbering = []
       let last_header_at_level_i = previous_headers.filter(h => h.level == i).last()
-      numbering(
-        last_header_at_level_i.numbering,
-        counter(heading).at(last_header_at_level_i.location()).last()
-      )
-      [.]
-      h(0.5em)
+      if last_header_at_level_i.numbering != none {
+        header_numbering = [
+          #numbering(
+            last_header_at_level_i.numbering,
+            counter(heading).at(last_header_at_level_i.location()).last()
+          ).#h(0.5em)
+        ]
+      }
+      header_numbering
       last_header_at_level_i.body
     }
   ).filter(it => it != none).join([#h(1em) --- #h(1em)])
@@ -93,15 +97,21 @@
   } else {
     left 
   }
-
-  align(
-    alignment,
-    [
+  let header_numbering = []
+  if last_appendix_header.numbering != none {
+    header_numbering = [
       #numbering(
         last_appendix_header.numbering,
         counter(heading).at(last_appendix_header.location()).last()
       )
       #h(0.5em)
+    ]
+  }
+
+  align(
+    alignment,
+    [
+      #header_numbering
       #last_appendix_header.body
     ]
   )
