@@ -1,6 +1,6 @@
 
 <!---
-Copyright 2025 Pierre BAGNARA
+Copyright 2025-2026 Pierre BAGNARA
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -24,8 +24,12 @@ Il contient des templates qui permettent d'imiter la mise en page, le style et l
 > [!IMPORTANT]
 > Ce projet est issu d'une initiative personnelle. Aix-Marseille Université (AMU) n'est aucunement affiliée à ce répertoire -> il ne s'agit pas d'un répertoire officiel validé par AMU. Les écoles doctorales restent donc décisionnaires, au cas par cas, quant à la validité de ce modèle et de son utilisation pour rédiger le manuscrit de thèse.
 
+Des droits d'auteur basés sur la license APACHE 2.0 s'appliquent sur le contenu du dossier ```templates```, ainsi que sur les fichiers ```amu_templates.typ``` et ```README.md```.
+L'utilisation, la modification et la republication de ces fichiers doivent être conformes aux règles établies par la license.
+Les autres fichiers ne sont pas visés par des droits d'auteur, ils peuvent être utilisés, modifiés et republiés librement.
 
-## Démarche et limites du modèle
+
+## Démarche et limites
 
 Ce répertoire propose uniquement des templates qui fonctionnent avec l'installation minimale de Typst, c'est-à-dire sans aucune dépendance à un package externe.
 L'objectif derrière cette contrainte est d'obtenir un projet "plug-&-play" qui fonctionne dès l'installation, n'impose pas le choix d'un package externe particulier et ne risque pas de casser au fil du temps avec les différentes mises-à-jour.
@@ -93,7 +97,7 @@ A partir de là, tous les fichiers inclus au document principal avec ```#include
 
 Lorsqu'une partie du document déroge aux règles fixées par le template principal, deux solutions :
 - Soit isoler la partie dans un fichier et écrire les commandes ```#set``` et ```#show``` que l'on veut appliquer au début du fichier (exemple dans ```abstract.typ```)
-- Soit écrire un template spécifique (exemple dans ```affidavit.typ```)
+- Soit écrire un template spécifique (exemple dans ```affidavit.typ``` et ```templates\affidavit.typ```)
 
 >[!WARNING]
 > Ecrire une commande ```#set``` ou ```#show``` dans le fichier principal revient à modifier les règles globales du template ```default``` qui sont appliquées sur tout le document. Mieux vaut directement modifier le template ```default``` dans ```templates/default.typ``` pour stocker toutes les règles globales au même endroit.

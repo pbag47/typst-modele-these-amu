@@ -1,4 +1,4 @@
-// Copyright 2025 Pierre BAGNARA
+// Copyright 2025-2026 Pierre BAGNARA
 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
