@@ -72,6 +72,69 @@
   // On écrit le texte de l'en-tête
   align(alignment)[#page_header_text]
 }
+...
+
+#let custom_page_header() = {
+  // On recense tous les titres précédents qui sont listés dans la table des matières
+  let chapter_header_selector = selector(heading)
+    .before(here())
+    .and(heading.where(outlined: true, level: 1))
+  let part_header_selector = selector(heading)
+    .before(here())
+    .and(heading.where(outlined: true, level: 2))
+  let previous_chapter_headers = query(chapter_header_selector)
+  let previous_part_headers = query(part_header_selector)
+
+  // Pas d'en-tête s'il n'y a pas eu de titre avant la page actuelle
+  if previous_chapter_headers.len() == 0 {
+    return
+  }
+  
+  // Pas d'en-tête sur les pages où un chapitre commence (chapitre = titre de niveau 1)
+  if query(heading.where(level: 1)).any(it => it.location().page() == here().page()) {
+    return
+  }
+
+  let page_header_text = []
+  let alignment = center
+  let header_numbering = []
+  let page_number = counter(page).get().first()
+  if calc.even(page_number) {
+    // Pages paires : on affiche le titre du chapitre (niveau 1)
+    let last_chapter_header = previous_chapter_headers.last()
+    if last_chapter_header.numbering != none {
+      header_numbering = [
+        #numbering(
+          last_chapter_header.numbering,
+          counter(heading).at(last_chapter_header.location()).last()
+        ).#h(0.5em)
+      ]
+    }
+    page_header_text = last_chapter_header.body
+    alignment = left
+  } else {
+      // Pages impaires : on affiche le titre de la partie (niveau 2)
+      // 
+      // Pas d'en-tête s'il n'y a pas eu de titre avant la page actuelle
+      if previous_part_headers.len() == 0 {
+        return
+      }
+      let last_part_header = previous_part_headers.last()
+      if last_part_header.numbering != none {
+      header_numbering = [
+        #numbering(
+          last_part_header.numbering,
+          counter(heading).at(last_part_header.location()).last()
+        ).#h(0.5em)
+      ]
+    }
+    page_header_text = last_part_header.body
+    alignment = right
+  }
+
+  // On écrit le texte de l'en-tête
+  align(alignment)[#header_numbering #page_header_text]
+}
 
 
 #let appendix_page_header() = {

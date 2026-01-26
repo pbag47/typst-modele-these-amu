@@ -13,7 +13,7 @@
 // limitations under the License.
 
 
-#import "page_headers.typ": default_page_header
+#import "page_headers.typ": default_page_header, custom_page_header
 
 
 // #let text_font = "Cambria"
@@ -28,7 +28,8 @@
     paper: "a4",
     margin: 2.5cm,
     numbering: "1",
-    header: context default_page_header(),
+    header: context custom_page_header(),
+    // header: context default_page_header(),
     header-ascent: 2.5em,
     footer-descent: 2.5em,
   )
@@ -68,6 +69,15 @@
   show heading.where(level: 3): set block(above: 1.4em, below: 1.2em)
   show heading.where(level: 4): set block(above: 1.4em, below: 1em)
 
+  // Début des chapitres sur toujours sur une page impaire
+  // (Chapitres indiqués par le label <Chap>)
+  show heading.where(label: <Chap>): it => {
+    {
+      set page(header: none, numbering: none)
+      pagebreak(to: "odd", weak: true)
+    }
+    it
+  }
 
   // ------------- Figures //
   // Remise à zéro de la numérotation des figures lorqu'on entre dans un nouveau chapitre
