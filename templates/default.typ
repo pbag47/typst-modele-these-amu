@@ -16,8 +16,8 @@
 #import "page_headers.typ": default_page_header, custom_page_header
 
 
-// #let text_font = "Cambria"
-#let text_font = "New Computer Modern"
+#let text_font = "Cambria"
+// #let text_font = "New Computer Modern"
 #let math_font = "New Computer Modern Math"
 
 
@@ -69,9 +69,8 @@
   show heading.where(level: 3): set block(above: 1.4em, below: 1.2em)
   show heading.where(level: 4): set block(above: 1.4em, below: 1em)
 
-  // Début des chapitres sur toujours sur une page impaire
-  // (Chapitres indiqués par le label <Chap>)
-  show heading.where(label: <Chap>): it => {
+  // Début des chapitres toujours sur une page impaire
+  show heading.where(level: 1): it => {
     {
       set page(header: none, numbering: none)
       pagebreak(to: "odd", weak: true)
