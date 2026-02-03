@@ -77,13 +77,13 @@
   name: [--NOM--], 
   date: [--DATE--],
   national_thesis_number: [--NNT--],
-  discipline: [Liste des disciplines en annexe A],
-  specialty: [Liste des spécialités en annexe A],
-  doctoral_school: [Liste des écoles doctorales en annexe A], 
+  discipline: [--DISCIPLINE--],
+  specialty: [--SP#upper[é]CIALIT#upper[é]--],
+  doctoral_school: [--#upper[é]COLE DOCTORALE--], 
   lab_and_research_partners: [
     Renseigner les partenaires institutionnels et les partenaires privés.
 
-    (un partenaire par ligne)
+    (Un partenaire par ligne)
     ],
   jury_members_array: {
     let jury = ()
@@ -105,9 +105,7 @@
     "template_images/example-image-b.png", 
     "template_images/example-image-c.png",
   ),
-  guidelines: [
-    Consignes de présentation détaillées des pages liminaires en annexe B 
-  ],
+  guidelines: [],
 
 
 ) = {
@@ -137,7 +135,7 @@
   v(0.25em)
   text(
     [
-      Soutenue à AMU  Aix-Marseille Université
+      Soutenue à AMU --- Aix-Marseille Université
       
       Le #date par
     ],
@@ -151,13 +149,13 @@
   align(center, text(name, size: 28pt, weight: "bold"))
   align(center,
     text(
-      [Titre de la thèse : #main_title],
+      main_title,
       size: 24pt,  // 24 sur le modèle Word, ?? sur le modèle LaTeX
     ),
   )
   align(center,
-    text(secondary_title, size: 22pt),
-    // size 24 sur le modèle Word, ?? sur le modèle LaTeX
+    text(secondary_title, 
+    size: 22pt),  // 24 sur le modèle Word, ?? sur le modèle LaTeX
   )
 
 

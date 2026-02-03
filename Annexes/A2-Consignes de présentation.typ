@@ -1,7 +1,7 @@
 
 
 == Consignes de présentation
-<Annexe-Consignes>
+<Annexe:Consignes>
 
 Vous venez de télécharger le modèle Typst pour les thèses de doctorat AMU.
 Certains éléments doivent obligatoirement être utilisés~:
@@ -16,9 +16,9 @@ Certains éléments doivent obligatoirement être utilisés~:
 + La composition du jury, l'école doctorale, la discipline et la spécialité (le cas échéant) doivent être conformes au formulaire Adum de demande de soutenance de thèse~;
 + Le numéro national de thèse (NNT) doit être apposé sur la page de titre~;
 + Le cas échéant, les logos d'institutions ou d'unité de recherche partenaires peuvent être ajoutés en bas de la page de titre~;
-+ La page @Affidavit~: selon la langue utilisée pour la rédaction de de votre thèse, opter pour la version en français ou en anglais, puis la compléter, la dater et la signer~;
-+ La #lower[@Publications] réalisées au cours de votre projet de thèse~;
-+ Les pages @Résumé en français et @Abstract en anglais~: chaque résumé ne doit pas dépasser 4000 caractères.
++ La page @Préambule:Affidavit~: selon la langue utilisée pour la rédaction de de votre thèse, opter pour la version en français ou en anglais, puis la compléter, la dater et la signer~;
++ La #lower[@Préambule:Publications] réalisées au cours de votre projet de thèse~;
++ Les pages @Préambule:Résumé en français et @Préambule:Abstract en anglais~: chaque résumé ne doit pas dépasser 4000 caractères.
 
 #linebreak()
 

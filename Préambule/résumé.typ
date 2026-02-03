@@ -2,8 +2,7 @@
 #set heading(numbering: none)
 
 
-= Résumé et mots clés
-<Résumé>
+= Résumé et mots clés <Préambule:Résumé>
 
 #lorem(150)
 

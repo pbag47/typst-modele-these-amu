@@ -18,9 +18,9 @@ Some elements must be used:
 + The composition of the jury, the doctoral school, the discipline and the specialty (if applicable) must be in accordance with the Adum application form for the thesis defense;
 + The national thesis number (NNT) must be displayed on the title page;
 + Where appropriate, logos of partner institutions or research units can be added to the bottom of the title page;
-+ The @Affidavit page: according to the language used for writing your thesis, choose the French or English version, then complete, date and sign it;
-+ The #lower[@Publications] page made during the course of your thesis project;
-+ @Résumé in French and @Abstract in English pages: each summary must not exceed 4,000 characters.
++ The @Préambule:Affidavit page: according to the language used for writing your thesis, choose the French or English version, then complete, date and sign it;
++ The #lower[@Préambule:Publications] page made during the course of your thesis project;
++ @Préambule:Résumé in French and @Préambule:Abstract in English pages: each summary must not exceed 4,000 characters.
 
 
 Depending on your needs, you can add the following elements: summary and/or table of contents, list of figures, list of tables, list of acronyms, glossary, index, nomenclature...

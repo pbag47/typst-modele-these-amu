@@ -1,19 +1,12 @@
 
 #import "amu_templates.typ"
-#show: amu_templates.default
 
+#show: amu_templates.default
+// #show: amu_templates.custom
 
 #include "page de garde.typ"
 #pagebreak()
-#include "affidavit.typ"
-#pagebreak()
-#include "liste des publications.typ"
-#pagebreak()
-#include "résumé.typ"
-#pagebreak()
-#include "abstract.typ"
-#pagebreak()
-#include "remerciements.typ"
+#include "Préambule/Préambule.typ"
 #pagebreak()
 #include "table des matières.typ"
 #pagebreak()
@@ -28,10 +21,15 @@
 #include "conclusion.typ"
 #pagebreak()
 #bibliography("biblio.bib")
+
 // TODO:
 // #pagebreak()
 // #amu_templates.showindex()
+
 #pagebreak()
 #amu_templates.showendnotes()
+
+#show: amu_templates.default_appendix
+// #show: amu_templates.custom_appendix
 #include "annexes.typ"
 

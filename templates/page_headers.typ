@@ -61,18 +61,10 @@
     }
   ).filter(it => it != none).join([#h(1em) --- #h(1em)])
 
-  // On définit l'alignement selon le numéro de la page (pair/impair)
-  let page_number = counter(page).get().first()
-  let alignment = if calc.odd(page_number) {
-    right 
-  } else {
-    left 
-  }
-
   // On écrit le texte de l'en-tête
-  align(alignment)[#page_header_text]
+  align(right)[#page_header_text]
 }
-...
+
 
 #let custom_page_header() = {
   // On recense tous les titres précédents qui sont listés dans la table des matières
@@ -137,7 +129,44 @@
 }
 
 
-#let appendix_page_header() = {
+#let default_appendix_page_header() = {
+  let header_selector = selector(heading)
+    .before(here())
+    .and(heading.where(outlined: true))
+  let previous_headers = query(header_selector)
+  
+  // Pas d'en-tête sur les pages où une annexe commence
+  if query(heading.where(level: 2)).any(it => it.location().page() == here().page()) {
+    return
+  }
+
+  // On ne sélectione que les titres de niveau 2 pour les afficher dans l'en-tête :
+  // Le titre de niveau 1 est "ANNEXES"
+  // Les titres de niveau 2 sont les titres de chaque annexe (A, B, C, etc...)
+  let last_appendix_header = previous_headers.filter(h => h.level == 2).last()
+
+  let header_numbering = []
+  if last_appendix_header.numbering != none {
+    header_numbering = [
+      #numbering(
+        last_appendix_header.numbering,
+        counter(heading).at(last_appendix_header.location()).last()
+      )
+      #h(0.5em)
+    ]
+  }
+
+  align(
+    right,
+    [
+      #header_numbering
+      #last_appendix_header.body
+    ]
+  )
+}
+
+
+#let custom_appendix_page_header() = {
   let header_selector = selector(heading)
     .before(here())
     .and(heading.where(outlined: true))

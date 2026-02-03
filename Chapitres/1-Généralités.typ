@@ -12,23 +12,21 @@ $ attach(D, bl: 1, tl: 2)^+ + attach(T, bl: 1, tl: 3)^+ arrow
 attach(H e, bl: 2, tl: 4)^(2+) med (3,5 "MeV") + n med (14,1 "MeV") $ <Eq:Fusion>
 
 #lorem(100)
-
 // TODO: Glossaire
-
 Un acronyme utilisé une première fois \gls{asb} puis une seconde fois \gls{asb}.
 Une définition du glossaire \gls{rutile} et une entrée de la nomenclature \gls{+a}.
 
 == Deuxième partie du premier chapitre
 
-#lorem(100)
+#lorem(50)
 
 L'utilisation des formules dans un environnement autorise les références croisées. Par exemple, nous pouvons faire appel à la formule de la fusion deutérium-tritium @Eq:Fusion. 
 Contrairement à une simple formule centrée :
 $ (2 "Na"^+, attach("SO", br: 4)^(2-)) + ("Ba"^(2+), 2 "Cl"^-) arrow 
 "BaSO"4 arrow.b + 2 "NaCl" $
 
-#lorem(50)
+#lorem(100)
 
-#quote(lorem(50), attribution: "Auteur")
+#quote(lorem(75), attribution: [Auteur])
 
 A titre d'exemple, nous venons d'insérer une courte citation fictive.

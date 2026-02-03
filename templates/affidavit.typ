@@ -22,11 +22,6 @@
   language: "fr",
 ) = {
 
-  set heading(numbering: none)
-  set page(numbering: none)
-
-  [= Affidavit <Affidavit>]
-
   if language == "fr" {
     [
       Je soussigné·e, #name,

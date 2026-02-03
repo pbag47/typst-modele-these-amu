@@ -1,6 +1,6 @@
 
 
-== Intitulé des doctorats <Annexe-Intitulé>
+== Intitulé des doctorats <Annexe:Intitulé>
 
 - Discipline
   - Spécialité

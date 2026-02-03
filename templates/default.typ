@@ -13,10 +13,12 @@
 // limitations under the License.
 
 
-#import "page_headers.typ": default_page_header, custom_page_header
+#import "page_headers.typ": default_page_header
 
 
-#let text_font = "Cambria"
+#let text_font = "Arial"
+// #let text_font = "Helvetica"
+// #let text_font = "Cambria"
 // #let text_font = "New Computer Modern"
 #let math_font = "New Computer Modern Math"
 
@@ -26,10 +28,14 @@
   // ------------- Pages //
   set page(
     paper: "a4",
-    margin: 2.5cm,
+    margin: (
+      top: 1in + 37pt, 
+      bottom: 1in + 37pt,
+      inside: 1in + 3pt, 
+      outside: 1in + 3pt,
+    ),
     numbering: "1",
-    header: context custom_page_header(),
-    // header: context default_page_header(),
+    header: context default_page_header(),
     header-ascent: 2.5em,
     footer-descent: 2.5em,
   )
@@ -39,8 +45,7 @@
   set par(
     leading: 0.55em, 
     spacing: 1em, 
-    first-line-indent: (amount: 0.5cm, all: false),
-    // first-line-indent: 0em,
+    first-line-indent: (amount: 0.5cm, all: true),
     justify: true,
   )
 
@@ -69,12 +74,9 @@
   show heading.where(level: 3): set block(above: 1.4em, below: 1.2em)
   show heading.where(level: 4): set block(above: 1.4em, below: 1em)
 
-  // Début des chapitres toujours sur une page impaire
+  // Espace supplémentaire au dessus des titres de niveau 1
   show heading.where(level: 1): it => {
-    {
-      set page(header: none, numbering: none)
-      pagebreak(to: "odd", weak: true)
-    }
+    v(1cm)
     it
   }
 
@@ -97,12 +99,12 @@
   show figure.where(kind: image): set figure(supplement: smallcaps[Figure])
   show figure.where(kind: table): set figure(supplement: smallcaps[Tableau])
 
-  // Espacement autour des figures
+  // Espace autour des figures
   show figure: set block(spacing: 2em)
 
 
   // ------------- Images //
-  // Espacement autour des images
+  // Espace autour des images
   show image: set block(spacing: 1em)
   
 
@@ -121,7 +123,7 @@
   // Police d'écriture
   show math.equation: set text(font: math_font)
 
-  // Espacement autour des équations
+  // Espac autour des équations
   show math.equation: set block(inset: 0.2em)
 
   // Format des numéros d'équation
@@ -158,7 +160,7 @@
           it.element.numbering,
           ..counter(it.element.func()).at(it.element.location())
         ),
-        font: "New Computer Modern Math")]
+        font: math_font)]
       )
     } else {
       it
@@ -170,10 +172,6 @@
   // Label servant à exclure de la table des matières les titres qui le portent
   show <exclude_heading_from_table_of_contents>: set heading(outlined: false)
 
-  // Label servant à désactiver la numérotation des équations qui le portent
-  // /!\ Dépréciation /!\
-  // Ce label est remplacé par le comportement par défaut du template : pas de numérotation des équations lorsqu'elles n'ont pas de label
-  show <no_numbering>: set math.equation(numbering: none)
 
   content
 }

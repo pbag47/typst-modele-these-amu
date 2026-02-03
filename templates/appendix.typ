@@ -13,20 +13,20 @@
 // limitations under the License.
 
 
-#import "page_headers.typ": appendix_page_header
+#import "page_headers.typ": default_appendix_page_header, custom_appendix_page_header
 
 
-#let appendix(content) = {
+#let default_appendix(content) = {
 
   // ------------- Pages //
-  set page(header: context appendix_page_header())
+  set page(header: context default_appendix_page_header())
 
 
   // ------------- Titres //
   // Titre de niveau 1 : "ANNEXES"
   show heading.where(level: 1): set heading(numbering: none)
   // Titres de niveau 2 : titres de chaque annexe
-  // On définit la fonction de numérotation pour ignorer le niveau 1
+  // On modifie la fonction de numérotation pour ignorer le niveau 1
   show heading.where(level: 2): set heading(
     numbering: {(..num) => numbering("A", num.pos().last())}
   )
@@ -38,6 +38,15 @@
     numbering: none,
     outlined: false,
   )
+
+  // Début des annexes toujours sur une page impaire
+  show heading.where(level: 2): it => {
+    {
+      set page(header: none, numbering: none)
+      pagebreak(to: "odd", weak: true)
+    }
+    it
+  }
 
 
   // ------------- Références //
@@ -56,12 +65,34 @@
 }
 
 
-#let appendix_title_page = {
+#let custom_appendix(content) = {
+  show: default_appendix
+  
+  // ------------- Pages //
+  set page(header: context custom_appendix_page_header())
+
+  // Début des annexes toujours sur une page impaire
+  show heading.where(level: 2): it => {
+    {
+      set page(header: none, numbering: none)
+      pagebreak(to: "odd", weak: true)
+    }
+    it
+  }
+  content
+}
+
+
+
+#let appendix_title_page(text: [Annexes]) = {
   // Page où "ANNEXES" est écrit au centre
   set page(header: none)
-  set heading(numbering: none)
-  v(1fr)
-  // align(center)[= #upper[Annexes]]
-  align(center)[= Annexes]
-  v(1fr)
+  align(
+    center + horizon, 
+    heading(
+      text, 
+      level: 1, 
+      numbering: none
+    )
+  )
 }

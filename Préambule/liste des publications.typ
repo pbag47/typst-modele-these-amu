@@ -3,8 +3,7 @@
 #set heading(numbering: none)
 
 
-= Liste des publications et participations aux conférences
-<Publications>
+= Liste des publications et participations aux conférences <Préambule:Publications>
 
 
 == Liste des publications et/ou brevets #footnote[

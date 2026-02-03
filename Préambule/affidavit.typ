@@ -1,6 +1,11 @@
 
-#import "amu_templates.typ"
+#import "../amu_templates.typ"
 
+#set heading(numbering: none)
+#set page(numbering: none)
+
+
+= Affidavit <Préambule:Affidavit>
 
 #amu_templates.affidavit(
   name: [[Prénom NOM]],
