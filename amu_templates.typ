@@ -13,7 +13,7 @@
 // limitations under the License.
 
 
-#import "templates/default.typ": default
+#import "templates/default.typ": default, math_font, text_font
 #import "templates/custom.typ": custom
 #import "templates/appendix.typ": default_appendix, appendix_title_page, custom_appendix
 #import "templates/cover_page.typ": cover_page
