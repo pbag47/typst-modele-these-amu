@@ -152,15 +152,34 @@
     if it.element != none and it.element.func() in (
       math.equation,
       heading,
-      figure,
     ){
       link(
         it.element.location(),
-        [#text(numbering(
-          it.element.numbering,
-          ..counter(it.element.func()).at(it.element.location())
-        ),
-        font: math_font)]
+        [
+          #text(
+            numbering(
+              it.element.numbering,
+              ..counter(
+                it.element.func()
+              ).at(it.element.location())
+            ),
+            font: math_font
+          )
+        ]
+      )
+    } else if it.element != none and it.element.func() == figure {
+      let figure_kind_counter = counter(figure.where(kind: it.element.kind))
+      link(
+        it.element.location(),
+        [
+          #text(
+            numbering(
+              it.element.numbering,
+              ..figure_kind_counter.at(it.element.location())
+            ),
+            font: math_font
+          )
+        ]
       )
     } else {
       it

@@ -14,33 +14,43 @@
 
 
 #let algorithm(header: none, body) = {
-  block(breakable: false)[
-    #if header != none {
-      line(length: 100%)
-      header
-    }
-    #line(length: 100%)
-    #body
-    #line(length: 100%)
-  ]
+  figure(
+    block(breakable: false)[
+      // #if header != none {
+      //   line(length: 100%)
+      //   header
+      // }
+      #line(length: 100%)
+      #body
+      #line(length: 100%)
+    ],
+    kind: "Algorithm",
+    supplement: smallcaps[Algorithme],
+    caption: header,
+    // numbering: //counter(figure.where(kind: "Algorithm")).display()
+  )
 }
 
 #let algorithm_text_part(title: none, lines: ()) = {
-  if title != none {
-    set par(hanging-indent: 0em, first-line-indent: 0em)
-    text(title, weight: "bold")
-    linebreak()
-  }
-  set par(hanging-indent: 1em, first-line-indent: 1em)
-  lines.join(linebreak())
+  align(left)[
+    #if title != none {
+      set par(hanging-indent: 0em, first-line-indent: 0em)
+      text(title, weight: "bold")
+      linebreak()
+    }
+    #set par(hanging-indent: 1em, first-line-indent: 1em)
+    #lines.join(linebreak())
+  ]
 }
 
 #let algorithm_math_part(title: none, lines: ()) = {
-  if title != none {
-    set par(hanging-indent: 0em, first-line-indent: 0em)
-    text(title, weight: "bold")
-    linebreak()
-  }
-  set par(hanging-indent: 1em, first-line-indent: 1em, leading: 1em)
-  lines.join(linebreak())
+  align(left)[
+    #if title != none {
+      set par(hanging-indent: 0em, first-line-indent: 0em)
+      text(title, weight: "bold")
+      linebreak()
+    }
+    #set par(hanging-indent: 1em, first-line-indent: 1em, leading: 1em)
+    #lines.join(linebreak())
+  ]
 }
