@@ -60,6 +60,10 @@
     it
   }
 
+  // ------------- Equations //
+  // Numéros d'équation en bas pour les équations multi-lignes
+  set math.equation(number-align: bottom)
+
   // Début des chapitres toujours sur une page impaire
   show heading.where(level: 1): it => {
     {

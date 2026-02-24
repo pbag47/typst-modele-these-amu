@@ -66,10 +66,26 @@
 
 
 #let custom_appendix(content) = {
-  show: default_appendix
-  
+
   // ------------- Pages //
   set page(header: context custom_appendix_page_header())
+
+  // ------------- Titres //
+  // Titre de niveau 1 : "ANNEXES"
+  show heading.where(level: 1): set heading(numbering: none)
+  // Titres de niveau 2 : titres de chaque annexe
+  // On modifie la fonction de numérotation pour ignorer le niveau 1
+  show heading.where(level: 2): set heading(
+    numbering: {(..num) => numbering("A", num.pos().last())}
+  )
+  show heading.where(level: 3): set heading(
+    numbering: none,
+    outlined: false,
+  )
+  show heading.where(level: 4): set heading(
+    numbering: none,
+    outlined: false,
+  )
 
   // Début des annexes toujours sur une page impaire
   show heading.where(level: 2): it => {
@@ -79,13 +95,14 @@
     }
     it
   }
+
   content
 }
 
 
 
 #let appendix_title_page(text: [Annexes]) = {
-  // Page où "ANNEXES" est écrit au centre
+  // Page où "Annexes" est écrit au centre
   set page(header: none)
   align(
     center + horizon, 

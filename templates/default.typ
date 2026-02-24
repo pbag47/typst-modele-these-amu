@@ -68,7 +68,7 @@
   show heading.where(level: 3): set text(weight: "bold", size: 18pt)
   show heading.where(level: 4): set text(weight: "bold", size: 16pt)
 
-  // Espacement autour des titres
+  // Espace autour des titres
   show heading.where(level: 1): set block(above: 1.4em, below: 1.5em)
   show heading.where(level: 2): set block(above: 1.4em, below: 1.4em)
   show heading.where(level: 3): set block(above: 1.4em, below: 1.2em)
@@ -123,7 +123,7 @@
   // Police d'écriture
   show math.equation: set text(font: math_font)
 
-  // Espac autour des équations
+  // Espace autour des équations
   show math.equation: set block(inset: 0.2em)
 
   // Format des numéros d'équation
@@ -155,17 +155,15 @@
     ){
       link(
         it.element.location(),
-        [
-          #text(
+        [#text(
             numbering(
               it.element.numbering,
               ..counter(
                 it.element.func()
               ).at(it.element.location())
-            ),
+            ), 
             font: math_font
-          )
-        ]
+          )]  // Ne pas séparer ) et ], sinon un espace s'affiche après la référence
       )
     } else if it.element != none and it.element.func() == figure {
       let figure_kind_counter = counter(figure.where(kind: it.element.kind))
@@ -178,8 +176,7 @@
               ..figure_kind_counter.at(it.element.location())
             ),
             font: math_font
-          )
-        ]
+          )]  // Ne pas séparer ) et ], sinon un espace s'affiche après la référence
       )
     } else {
       it
