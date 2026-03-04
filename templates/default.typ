@@ -167,17 +167,24 @@
       )
     } else if it.element != none and it.element.func() == figure {
       let figure_kind_counter = counter(figure.where(kind: it.element.kind))
-      link(
-        it.element.location(),
-        [
-          #text(
-            numbering(
-              it.element.numbering,
-              ..figure_kind_counter.at(it.element.location())
-            ),
-            font: math_font
-          )]  // Ne pas séparer ) et ], sinon un espace s'affiche après la référence
-      )
+      if it.element.kind == "Algorithm" and it.element.caption != none {
+        link(
+          it.element.location(),
+          [#text(it.element.caption.body)]
+        )
+      } else {
+        link(
+          it.element.location(),
+          [
+            #text(
+              numbering(
+                it.element.numbering,
+                ..figure_kind_counter.at(it.element.location())
+              ),
+              font: math_font
+            )]  // Ne pas séparer ) et ], sinon un espace s'affiche après la référence
+        )
+      }
     } else {
       it
     }

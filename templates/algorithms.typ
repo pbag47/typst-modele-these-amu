@@ -16,10 +16,6 @@
 #let algorithm(header: none, body) = {
   figure(
     block(breakable: false)[
-      // #if header != none {
-      //   line(length: 100%)
-      //   header
-      // }
       #line(length: 100%)
       #body
       #line(length: 100%)
@@ -27,7 +23,6 @@
     kind: "Algorithm",
     supplement: smallcaps[Algorithme],
     caption: header,
-    // numbering: //counter(figure.where(kind: "Algorithm")).display()
   )
 }
 
