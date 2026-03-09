@@ -26,7 +26,8 @@ Il contient des templates qui permettent d'imiter la mise en page, le style et l
 
 Des droits d'auteur basés sur la license APACHE 2.0 s'appliquent sur le contenu du dossier ```templates```, ainsi que sur les fichiers ```amu_templates.typ``` et ```README.md```.
 L'utilisation, la modification et la republication de ces fichiers doivent être conformes aux règles établies par la license.
-Les autres fichiers ne sont pas visés par des droits d'auteur, ils peuvent être utilisés, modifiés et republiés librement.
+
+L'intégralité du texte exemple contenu dans les dossiers ```Préambule```, ```Chapitres``` et ```Annexes``` est directement issu ou adapté du [modèle LaTeX officiel d'Aix-Marseille Université](https://github.com/SCD-Aix-Marseille-Universite/latexamu/tree/master).
 
 
 ## Démarche et limites
