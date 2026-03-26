@@ -90,12 +90,17 @@
 
   // Format des numéros de figure
   set figure(
-    numbering: (n, ..) => {
-      numbering("1.1", counter(heading).get().first(), n)
-    },
+    numbering: (figure_number, ..) => {
+      let chapter_number = counter(heading).get().first()
+      numbering(
+        "1.1", 
+        chapter_number, 
+        figure_number
+      )
+    }
   )
 
-  // Format des références aux figures
+  // Format des descriptions de figures
   show figure.where(kind: image): set figure(supplement: smallcaps[Figure])
   show figure.where(kind: table): set figure(supplement: smallcaps[Tableau])
 
@@ -155,7 +160,8 @@
     ){
       link(
         it.element.location(),
-        [#text(
+        [
+          #text(
             numbering(
               it.element.numbering,
               ..counter(
@@ -178,7 +184,8 @@
           [
             #text(
               numbering(
-                it.element.numbering,
+                "1.1",
+                counter(heading.where(level: 1)).at(it.element.location()).first(),
                 ..figure_kind_counter.at(it.element.location())
               ),
               font: math_font
