@@ -20,6 +20,7 @@
 #import "templates/affidavit.typ": affidavit
 #import "templates/endnotes.typ": endnote, showendnotes
 #import "templates/algorithms.typ": algorithm, algorithm_text_part, algorithm_math_part
+#import "templates/nomenclature.typ": nomenclature, setup_nomenclature, show_nomenclature
 
 // TODO:
 // #import "templates/index.typ": index, showindex

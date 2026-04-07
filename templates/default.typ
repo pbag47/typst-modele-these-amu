@@ -14,6 +14,7 @@
 
 
 #import "page_headers.typ": default_page_header
+#import "nomenclature.typ": setup_nomenclature
 
 
 #let text_font = "Arial"
@@ -78,6 +79,7 @@
   show heading.where(level: 1): it => {
     v(1cm)
     it
+    setup_nomenclature()
   }
 
   // ------------- Figures //
@@ -142,7 +144,8 @@
     if not it.has("label") and it.numbering != none {
       counter(math.equation).update(v => v - 1)
       [#math.equation(it.body, block: true, numbering: none)]
-    } else {
+    } 
+    else {
       it
     }
   }
@@ -154,7 +157,10 @@
   // https://typst.app/docs/reference/model/ref/#customization
   // Réadapté pour le format des références aux chapitres et aux figures
   show ref: it => {
-    if it.element != none and it.element.func() in (
+    if it.element == none {
+      it
+    }
+    else if it.element.func() in (
       math.equation,
       heading,
     ){
@@ -171,28 +177,33 @@
             font: math_font
           )]  // Ne pas séparer ) et ], sinon un espace s'affiche après la référence
       )
-    } else if it.element != none and it.element.func() == figure {
+    } 
+    else if it.element.func() == figure {
       let figure_kind_counter = counter(figure.where(kind: it.element.kind))
       if it.element.kind == "Algorithm" and it.element.caption != none {
         link(
           it.element.location(),
           [#text(it.element.caption.body)]
         )
-      } else {
+      } 
+      else {
+        let chapter_number = counter(heading.where(level: 1)).at(it.element.location()).first()
+        let figure_number = figure_kind_counter.at(it.element.location())
         link(
           it.element.location(),
           [
             #text(
               numbering(
                 "1.1",
-                counter(heading.where(level: 1)).at(it.element.location()).first(),
-                ..figure_kind_counter.at(it.element.location())
+                chapter_number,
+                ..figure_number
               ),
               font: math_font
             )]  // Ne pas séparer ) et ], sinon un espace s'affiche après la référence
         )
       }
-    } else {
+    } 
+    else {
       it
     }
   }
