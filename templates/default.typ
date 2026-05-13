@@ -79,8 +79,14 @@
   show heading.where(level: 1): it => {
     v(1cm)
     it
-    setup_nomenclature()
   }
+
+  // ------------- Nomenclature //
+  // Remet à zéro les entrées de la nomenclature à chaque nouveau chapitre
+  // show heading.where(level: 1): it => {
+  //   it
+  //   setup_nomenclature()
+  // }
 
   // ------------- Figures //
   // Remise à zéro de la numérotation des figures lorqu'on entre dans un nouveau chapitre

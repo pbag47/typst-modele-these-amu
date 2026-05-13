@@ -70,7 +70,7 @@
 }
 
 
-#let showendnotes(name: "Notes") = context{
+#let show_endnotes(name: "Notes") = context{
   heading(numbering: none)[#name]
   show par: set par(first-line-indent: 0cm)
   let amt = amount_of_endnotes.get()

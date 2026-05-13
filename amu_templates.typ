@@ -18,9 +18,9 @@
 #import "templates/appendix.typ": default_appendix, appendix_title_page, custom_appendix
 #import "templates/cover_page.typ": cover_page
 #import "templates/affidavit.typ": affidavit
-#import "templates/endnotes.typ": endnote, showendnotes
+#import "templates/endnotes.typ": endnote, show_endnotes
 #import "templates/algorithms.typ": algorithm, algorithm_text_part, algorithm_math_part
-#import "templates/nomenclature.typ": nomenclature, setup_nomenclature, show_nomenclature
+#import "templates/nomenclature.typ": nomenclature, setup_nomenclature, show_nomenclature, nomenclature_counter, entry_counter
 
 // TODO:
 // #import "templates/index.typ": index, showindex
