@@ -59,6 +59,10 @@
   )
 
 
+  // ------------- Listes //
+  set list(marker: [--])
+
+
   // ------------- Titres //
   // Numérotation des titres
   set heading(numbering: "1.1.1.1", supplement: none)
